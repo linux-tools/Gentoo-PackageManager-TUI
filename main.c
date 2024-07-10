@@ -8,7 +8,8 @@ char _user_choose_editor[255];//string variable
 int _choose_;
 int _choose_1_;
 int _choose_2_;
-int _choose_3_;   //define users' inputation variable
+int _choose_3_;
+ int _choose_4_;  //define users' inputation variable
 char _choose_repo_[255];
 
 int main(){
@@ -85,6 +86,48 @@ int main(){
                 {
                     sleep(1);
                     cls();
+                    package_install_menu();
+                    scanf("%s",_user_input);
+                    printf("Please choose a way to install packages on your system:\n\
+                            1.install from src\n\
+                            2.install from binary(NOT EVERY PACKAGE CAN BE INSTALL BY BINARY PACKAGE)\n\
+                            3.return\n\
+                            Please choose:");
+                    scanf("%d",&_choose_4_);
+                    getchar();
+                    if (_choose_4_ == 1)
+                    {
+                        package_install_src(_user_input);
+                    }
+                    else if (_choose_4_ == 2)
+                    {
+                        package_install_binary(_user_input);
+                    }
+                    strcpy(_user_input,"");
+                    printf("Please input 1 to return:");
+                    int a;//checking "1" key
+                    scanf("%d",&a);
+                    getchar();
+                    if (a == 1)
+                    {
+                        sleep(1);
+                        cls();
+                        menu_folk();
+                        scanf("%d",&_choose_1_);
+                        getchar();
+                    }
+                    else
+                    {
+                        printf("Please input 1 to return:");
+                        scanf("%d",&a);
+                        getchar();
+                    }
+                }
+                
+                else if (_choose_1_ == 4)
+                {
+                    sleep(1);
+                    cls();
                     printf("Search:");
                     scanf("%s",_user_input);
                     package_search(_user_input);
@@ -108,7 +151,7 @@ int main(){
                         getchar();
                     }
                 }
-                else if (_choose_1_ == 4)
+                else if (_choose_1_ == 5)
                 {
                     sleep(1);
                     cls();
@@ -254,9 +297,9 @@ int main(){
                     getchar();
                     
                 }
-                else if (_choose_1_ == 5)
+                else if (_choose_1_ == 6)
                 {
-                    sleep(3);
+                    sleep(1);
                     cls();
                     break;
                 }

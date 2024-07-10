@@ -22,6 +22,8 @@ char package_install_binary(char a[255]){//Gentoo's packages installation founct
     sleep(1);
     printf("Do you want to run 'getuto' to refresh the binary package related keys?\n\
     Please input 1 to permit the operate or input other number to continue.\n\
+    Warning: Please don't run it again or you must delete /etc/portage/gnupg to rerun getuto\n\
+    to recover the ability to install binary packages unless you had never run getuto tu refresh keys!\n\
     Please input:");
     int b;
     scanf("%d",&b);
@@ -66,6 +68,8 @@ void system_update_binary(){
     int a;
     printf("Do you want to run 'getuto' to refresh the binary package related keys?\n\
     Please input 1 to permit the operate or input other number to continue.\n\
+    Warning: Please don't run it again or you must delete /etc/portage/gnupg to rerun getuto\n\
+    to recover the ability to install binary packages unless you had never run getuto tu refresh keys!\n\
     Please input:");
     scanf("%d",&a);
     if (a == 1)
@@ -111,11 +115,13 @@ void menu_folk(){
     ******************************************************************************\n\
     *****--------------------2.Uninstall packages you want-------------------*****\n\
     ******************************************************************************\n\
-    *****----------------3.Searching packages from your repository-----------*****\n\
+    *****---------------------3.install packages you want--------------------*****\n\
     ******************************************************************************\n\
-    *****----------------------4.Edit package repositories-------------------*****\n\
+    *****----------------4.Searching packages from your repository-----------*****\n\
     ******************************************************************************\n\
-    *****-------------------------------5.BACK-------------------------------*****\n\
+    *****----------------------5.Edit package repositories-------------------*****\n\
+    ******************************************************************************\n\
+    *****-------------------------------6.BACK-------------------------------*****\n\
     ******************************************************************************\n\
     ******************************************************************************\n\
     Please input a number:");
@@ -156,6 +162,12 @@ void update_system_menu(){
 void package_uninstall_menu(){
     printf("\n\
     Please enter a content you want to uninstall\n\
+    Please input:");
+}
+
+void package_install_menu(){
+    printf("\n\
+    Please enter a content you want to install\n\
     Please input:");
 }
 
@@ -232,7 +244,7 @@ char repo_remove(char a[255]){
 
 void version(){
     printf("\n\
-    Version:1.0-Release\n\
+    Version:1.0-Release-fix1\n\
     Dependence:gentoolkit,eselect-repository,sudo\n\
     Author:Super111\n\
     Homepage:https://gitee.com/Linux-Tool\n\
