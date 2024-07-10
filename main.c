@@ -3,6 +3,7 @@
 #include<string.h>
 #include<unistd.h>
 #include "package.h"
+
 char _user_input[255];
 char _user_choose_editor[255];//string variable
 int _choose_;
@@ -178,7 +179,7 @@ int main(){
                         }
                         else if (_choose_3_ == 2)
                         {
-                            repository_edit_src(_user_choose_editor);
+                            repository_edit_src();
                             printf("Returning...\n");
                             sleep(3);
                             cls();
@@ -188,7 +189,7 @@ int main(){
                         }
                         else if (_choose_3_ == 3)
                         {
-                            repository_edit_binary(_user_choose_editor);
+                            repository_edit_binary();
                             printf("Returning...\n");
                             sleep(3);
                             cls();
