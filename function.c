@@ -158,7 +158,7 @@ void manage_package_and_repository(){
                     editor_choose(b);
                     editor_check();
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     cls();
                     package_repository_edit_menu();
                     scanf("%d",&_choose_3_);
@@ -166,9 +166,10 @@ void manage_package_and_repository(){
                 }
                 else if (_choose_3_ == 2)
                 {
-                    repository_edit_src(_user_choose_editor);
+                    cls();
+                    repository_edit_src();
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     cls();
                     package_repository_edit_menu();
                     scanf("%d",&_choose_3_);
@@ -176,9 +177,10 @@ void manage_package_and_repository(){
                 }
                 else if (_choose_3_ == 3)
                 {
-                    repository_edit_binary(_user_choose_editor);
+                    cls();
+                    repository_edit_binary();
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     cls();
                     package_repository_edit_menu();
                     scanf("%d",&_choose_3_);
@@ -210,13 +212,14 @@ void manage_package_and_repository(){
                 }
                 else if (_choose_3_ == 5)
                 {
+                    cls();
                     system("eselect repository list");
                     printf("Please enter name that you want to enable:");
                     scanf("%s",_choose_repo_);
                     getchar();
                     repo_enable(_choose_repo_);
                     printf("Done!\n");
-                    sleep(3);
+                    sleep(2);
                     cls();
                     package_repository_edit_menu();
                     scanf("%d",&_choose_3_);
@@ -224,6 +227,7 @@ void manage_package_and_repository(){
                 }
                 else if (_choose_3_ == 6)
                 {
+                    cls();
                     system("eselect repository list");
                     printf("Please enter name that you want to disable:");
                     scanf("%s",_choose_repo_);
@@ -238,6 +242,7 @@ void manage_package_and_repository(){
                 }
                 else if (_choose_3_ == 7)
                 {
+                    cls();
                     system("eselect repository list");
                     printf("Please enter name that you want to remove:");
                     scanf("%s",_choose_repo_);
@@ -252,6 +257,7 @@ void manage_package_and_repository(){
                 }
                 else if (_choose_3_ == 8)
                 {
+                    cls();
                     system("eselect repository list");
                     printf("\n\
                     Please input custom repository that you want to add by your own\n\
