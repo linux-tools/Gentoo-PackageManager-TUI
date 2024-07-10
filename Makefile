@@ -1,5 +1,5 @@
 CC=gcc
-OBJS=main.o package.o
+OBJS=main.o package.o function.o
 CFLAGS=-c -Wall -g
 BINDIR=/usr/bin
 gentoo-packagemanager:$(OBJS)
@@ -9,6 +9,8 @@ main.o:main.c
 	$(CC) main.c $(CFLAGS) -o main.o
 package.o:package.c
 	$(CC) package.c $(CFLAGS) -o package.o
+function.o:function.c
+	$(CC) function.c $(CFLAGS) -o function.o
 
 clean:
 	$(RM) *.o gentoo-packagemanager -r
