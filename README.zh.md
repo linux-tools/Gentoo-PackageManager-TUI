@@ -20,17 +20,22 @@
 根据菜单提示进行操作.
 
 #### 界面展示
+以下界面均在Gentoo gnome45上所截的图
 
-这是软件的主页面(以下界面均在gnome45上所截的图)
+这是软件的主页面:
+
 ![图 0](images/823e5dbdd6b03d0f55c3900960ef887bdc7c79767b1495900db92746db44013e.png)
 
-这是软件包管理页面
+这是软件包管理页面:
+
 ![图 1](images/f9cce90da395b82b5a0cea467b83f00e5a4788b8d82c2130bd9b47092e5fb0ec.png)
 
-这是编辑软件仓库的菜单
+这是编辑软件仓库的菜单:
+
 ![图 2](images/13c2833c8458bdfbb4136ec176db9c92bb6a58e333f49c21498082ac2c29f3ad.png)
 
-这是系统更新界面
+这是系统更新界面:
+
 ![图 3](images/ff5d2da03c9b02f1b27c6e4cb74f11f2e11956e6023bed70a0e08ecbf17ec781.png)
 
 #### 作者自述
