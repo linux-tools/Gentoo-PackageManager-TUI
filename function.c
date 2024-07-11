@@ -295,11 +295,11 @@ void check_installed_packages_menu(){
 
 void update_system_menu(){
     printf("\n\
-            Please choose a way to update your system:\n\
-            1.install from src\n\
-            2.install from binary(NOT EVERY PACKAGE CAN BE INSTALL BY BINARY PACKAGE)\n\
-            3.return\n\
-            Please choose:");
+        Please choose a way to update your system:\n\
+        1.install from src\n\
+        2.install from binary(NOT EVERY PACKAGE CAN BE INSTALL BY BINARY PACKAGE)\n\
+        3.return\n\
+        Please choose:");
 }
 
 void package_uninstall_menu(){
@@ -331,7 +331,8 @@ ating system according to your location.Never remove gentoo sources.YOU ARE BE W
 ******6.disable repository(Both official and third-party repositories are included)        \n\
 ******7.remove repository(Both official and third-party repositories are included)         \n\
 ******8.add your own repository(Not on the list of eselect-repository online)              \n\
-******9.Back                                                                               \n\
+******9.sync all repository                                                                \n\
+******10.Back                                                                              \n\
 -------------------------------------------------------------------------------------------\n\
 -------------------------------------------------------------------------------------------\n\
 ####Please input:");
@@ -456,8 +457,8 @@ void repository_manage(){
             scanf("%d",&_choose_3_);
             getchar();
             }
-            else if (_choose_3_ == 8)
-            {
+        else if (_choose_3_ == 8)
+        {
             cls();
             system("eselect repository list");
             printf("\n\
@@ -473,8 +474,19 @@ void repository_manage(){
             package_repository_edit_menu();
             scanf("%d",&_choose_3_);
             getchar();
-        }                    
+        }
         else if (_choose_3_ == 9)
+        {
+            cls();
+            system("sudo emerge --sync");
+            printf("Done!");
+            sleep(1);
+            cls();
+            package_repository_edit_menu();
+            scanf("%d",&_choose_3_);
+            getchar();
+        }                    
+        else if (_choose_3_ == 10)
         {
             sleep(1);
             break;

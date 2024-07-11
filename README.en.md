@@ -21,4 +21,5 @@ You can remove /usr/bin/gentoo-packagemanager to uninstall.
 
 #### Instructions
 
-None
+Please enter numbers and do not enter strings at random.
+Considering that it is used on the server, it temporarily supports English! Chinese follow-up support (please run under X11, wayland or a terminal that supports Chinese for the Chinese version)
