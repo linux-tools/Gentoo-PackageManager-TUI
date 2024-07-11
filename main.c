@@ -39,11 +39,13 @@ int main(){
             sleep(1);
             break;
         }
-        else if (_choose_ == 5)
+        else
         {
-            goto PANIC_1;
+            cls();
+            menu_main();
+            scanf("%d",&_choose_);
+            getchar();
         }
     }  
     return 0;
-    PANIC_1: panic_1();//Error area
-    }
+}
