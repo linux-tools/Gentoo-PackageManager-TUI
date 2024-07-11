@@ -224,7 +224,7 @@ void version(){
     printf("\n\
     *************************************************\n\
     *************************************************\n\
-    **Version:2.0-beta-dev2                        **\n\
+    **Version:2.0-beta-dev3                        **\n\
     **Dependence:gentoolkit,eselect-repository,sudo**\n\
     **Author:Super111                              **\n\
     **Homepage:https://gitee.com/Linux-Tool        **\n\
