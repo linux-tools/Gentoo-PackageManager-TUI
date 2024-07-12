@@ -63,7 +63,6 @@ char package_search(char a[255]){//Gentoo's packages searching founction
     system("clear");
     system(exec);
     sleep(2);
-    system("clear");
     return 0;
 }
 
