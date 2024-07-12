@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<string.h>
-
 char package_install_src(char a[255]){//Gentoo's packages installation founction
     char exec_src[255];
     sprintf(exec_src,("sudo emerge --ask %s"),a);
@@ -47,7 +46,7 @@ char package_install_binary(char a[255]){//Gentoo's packages installation founct
             1.permit the operate\n\
             2.continue to install without executing getuto.\n\
             Warning: Please don't run it again or you must delete /etc/portage/gnupg to rerun getuto\n\
-            to recover the ability to install binary packages unless you had never run getuto tu refresh keys!\n\
+            to recover the ability to install binary packages unless you had never run getuto to refresh keys!\n\
             Please input:");
             scanf("%d",&b);
         }
@@ -179,7 +178,8 @@ int editor_choose(int a){
     return 0;
 }
 
-void editor_check()
+char editor_check()
 {
-    system("echo $EDITOR");
+    system("echo The editor that you choose is $EDITOR");
+    return 0;
 }

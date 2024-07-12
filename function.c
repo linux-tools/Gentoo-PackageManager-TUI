@@ -51,7 +51,7 @@ void manage_package_and_repository(){
             sleep(1);
             cls();
             package_uninstall_menu();
-            scanf("%s",_user_input);
+            scanf("%[^\n]",_user_input);
             package_uninstall(_user_input);
             strcpy(_user_input,"");
             printf("Please input 1 to return:");
@@ -78,7 +78,7 @@ void manage_package_and_repository(){
             sleep(1);
             cls();
             package_install_menu();
-            scanf("%s",_user_input);
+            scanf("%[^\n]",_user_input);
             printf("Please choose a way to install packages on your system:\n\
                 1.install from src\n\
                 2.install from binary(NOT EVERY PACKAGE CAN BE INSTALL BY BINARY PACKAGE)\n\
@@ -260,9 +260,9 @@ void menu_folk(){
     ******************************************************************************\n\
     *****---------------------3.install packages you want--------------------*****\n\
     ******************************************************************************\n\
-    *****----------------4.Searching packages from your repository-----------*****\n\
+    *****---------------4.Searching packages from your repository------------*****\n\
     ******************************************************************************\n\
-    *****----------------------5.Edit package repositories-------------------*****\n\
+    *****--------------------5.Manage package repositories-------------------*****\n\
     ******************************************************************************\n\
     *****-------------------------------6.BACK-------------------------------*****\n\
     ******************************************************************************\n\
@@ -316,7 +316,7 @@ void package_install_menu(){
 
 void package_repository_edit_menu(){
     printf("\n\
-------------------------------------REPOSITORY-EDIT-MENU-----------------------------------\n\
+---------------------------------REPOSITORY-MANAGE-MENU------------------------------------\n\
 -------------------------------------------------------------------------------------------\n\
 Warning: The second and third operations will very dangerous,I suggest execute 4-8 options \n\
 to edit some repository unless you just change mirror to speed up fetching packages and upd\n\
@@ -497,6 +497,6 @@ void repository_manage(){
             package_repository_edit_menu();
             scanf("%d",&_choose_3_);
             getchar();
-            }
+        }
     }
 }

@@ -31,6 +31,6 @@ void repository_edit_src();
 
 int editor_choose(int a);
 
-void editor_check();
+char editor_check();
 
 #endif
