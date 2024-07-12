@@ -1,11 +1,4 @@
-#ifndef FUNCTION_H
-void manage_package_and_repository();
-
-void update_system();
-
-void about();
-
-void version();
+#ifndef MAIN_FUNCTION_H
 
 void menu_main();
 
@@ -21,8 +14,12 @@ void package_install_menu();
 
 void package_repository_edit_menu();//Packagemanager Menu
 
-void cls();
+void portage_manage_menu();
 
-void repository_manage();
+void choose_create_file_type_menu_in_portage();
+
+void choose_edit_file_type_menu_in_portage();
+
+void choose_delete_file_type_menu_in_portage();
 
 #endif

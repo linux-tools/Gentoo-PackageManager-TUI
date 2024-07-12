@@ -11,7 +11,7 @@ In terms of source portability,the software theoretically support all architectu
 #### Installation
 
 Install dependencies:
-app-eselect/eselect-repository,app-portage/gentoolkit app-admin/sudo
+app-eselect/eselect-repository,app-portage/gentoolkit app-admin/sudo,app-text/tree
 
 Please execute "emerge --ask app-eselect/eselect-repository app-portage/gentoolkit" to install dependencies.
 

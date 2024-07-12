@@ -9,7 +9,7 @@
 
 #### 安装教程
 
-安装依赖：gentoolkit、select-repository、sudo
+安装依赖：app-portage/gentoolkit,app-eselect/select-repository,app-admin/sudo,app-text/tree
 执行make、make install 即可，如需卸载，请删除"/usr/bin/gentoo-packagemanager"即可
 也可以下载Release上的包解压并执行install.sh来安装，用uninstall.sh来卸载
 

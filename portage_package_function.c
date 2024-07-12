@@ -4,7 +4,7 @@
 #include<string.h>
 char package_install_src(char a[255]){//Gentoo's packages installation founction
     char exec_src[255];
-    sprintf(exec_src,("sudo emerge --ask %s"),a);
+    sprintf(exec_src,"sudo emerge --ask %s",a);
     system("clear");
     sleep(1);
     system("clear");
@@ -23,7 +23,7 @@ char package_install_binary(char a[255]){//Gentoo's packages installation founct
     printf("Do you want to run 'getuto' to refresh the binary package related keys?\n\
     1.permit the operate\n\
     2 continue to install without executing getuto.\n\
-    Warning: Please don't run it again or you must delete /etc/portage/gnupg to rerun getuto\n\
+    Warning: Please don't run it again or you must delete /etc/portage/gnupg to re-execute getuto\n\
     to recover the ability to install binary packages unless you had never run getuto tu refresh keys!\n\
     Please input:");
     scanf("%d",&b);
