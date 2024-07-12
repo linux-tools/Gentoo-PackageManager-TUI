@@ -52,24 +52,37 @@ void manage_package_and_repository(){
             cls();
             package_uninstall_menu();
             scanf("%[^\n]",_user_input);
-            package_uninstall(_user_input);
-            strcpy(_user_input,"");
-            printf("Please input 1 to return:");
-            int a;//checking "1" key
-            scanf("%d",&a);
             getchar();
-            if (a == 1)
+            if (strcmp(_user_input,"b") != 0 )
+            {
+                package_uninstall(_user_input);
+                strcpy(_user_input,"");
+            
+                printf("Please input 1 to return:");
+                int a;//checking "1" key
+                scanf("%d",&a);
+                getchar();
+                if (a == 1)
+                {
+                    sleep(1);
+                    cls();
+                    menu_folk();
+                    scanf("%d",&_choose_1_);
+                    getchar();
+                }
+                else
+                {
+                    printf("Please input 1 to return:");
+                    scanf("%d",&a);
+                    getchar();
+                }
+            }
+            else
             {
                 sleep(1);
                 cls();
                 menu_folk();
                 scanf("%d",&_choose_1_);
-                getchar();
-            }
-            else
-            {
-                printf("Please input 1 to return:");
-                scanf("%d",&a);
                 getchar();
             }
         }
@@ -79,38 +92,51 @@ void manage_package_and_repository(){
             cls();
             package_install_menu();
             scanf("%[^\n]",_user_input);
-            printf("Please choose a way to install packages on your system:\n\
+            getchar();
+            if (strcmp(_user_input,"b") != 0)
+            {
+                printf("\n\
+                Please choose a way to install packages on your system:\n\
                 1.install from src\n\
                 2.install from binary(NOT EVERY PACKAGE CAN BE INSTALL BY BINARY PACKAGE)\n\
                 3.return\n\
                 Please choose:");
-            scanf("%d",&_choose_4_);
-            getchar();
-            if (_choose_4_ == 1)
-            {
-                package_install_src(_user_input);
+                scanf("%d",&_choose_4_);
+                getchar();
+                if (_choose_4_ == 1)
+                {
+                    package_install_src(_user_input);
+                }
+                else if (_choose_4_ == 2)
+                {
+                    package_install_binary(_user_input);
+                }
+                strcpy(_user_input,"");
+                printf("Please input 1 to return:");
+                int a;//checking "1" key
+                scanf("%d",&a);
+                getchar();
+                if (a == 1)
+                {
+                    sleep(1);
+                    cls();
+                    menu_folk();
+                    scanf("%d",&_choose_1_);
+                    getchar();
+                }
+                else
+                {
+                    printf("Please input 1 to return:");
+                    scanf("%d",&a);
+                    getchar();
+                }
             }
-            else if (_choose_4_ == 2)
-            {
-                package_install_binary(_user_input);
-            }
-            strcpy(_user_input,"");
-            printf("Please input 1 to return:");
-            int a;//checking "1" key
-            scanf("%d",&a);
-            getchar();
-            if (a == 1)
+            else
             {
                 sleep(1);
                 cls();
                 menu_folk();
                 scanf("%d",&_choose_1_);
-                getchar();
-            }
-            else
-            {
-                printf("Please input 1 to return:");
-                scanf("%d",&a);
                 getchar();
             }
         }    
@@ -118,26 +144,38 @@ void manage_package_and_repository(){
         {
             sleep(1);
             cls();
-            printf("Search:");
+            printf("Search packages or input b to go back to the previous menu\n\
+            Please input:");
             scanf("%s",_user_input);
-            package_search(_user_input);
-            strcpy(_user_input,"");
-            printf("Please input 1 to return:");
-            int a;//checking "1" key
-            scanf("%d",&a);
-            getchar();
-            if (a == 1)
+            if (strcmp(_user_input,"b") != 0)
+            {
+                package_search(_user_input);
+                strcpy(_user_input,"");
+                printf("Please input 1 to return:");
+                int a;//checking "1" key
+                scanf("%d",&a);
+                getchar();
+                if (a == 1)
+                {
+                    sleep(1);
+                    cls();
+                    menu_folk();
+                    scanf("%d",&_choose_1_);
+                    getchar();
+                }
+                else
+                {
+                    printf("Please press 1 to return:");
+                    scanf("%d",&a);
+                    getchar();
+                }
+            }
+            else
             {
                 sleep(1);
                 cls();
                 menu_folk();
                 scanf("%d",&_choose_1_);
-                getchar();
-            }
-            else
-            {
-                printf("Please press 1 to return:");
-                scanf("%d",&a);
                 getchar();
             }
         }
@@ -304,13 +342,15 @@ void update_system_menu(){
 
 void package_uninstall_menu(){
     printf("\n\
-    Please enter a content you want to uninstall\n\
+    Please enter your content you want to uninstall\n\
+    or input b to go back to the previous menu\n\
     Please input:");
 }
 
 void package_install_menu(){
     printf("\n\
-    Please enter a content you want to install\n\
+    Please enter your content you want to install\n\
+    or input b to go back to the previous menu\n\
     Please input:");
 }
 
