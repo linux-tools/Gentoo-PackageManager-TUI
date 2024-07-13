@@ -641,7 +641,7 @@ void about(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **Version:2.0-beta-dev4                             **\n\
+    **Version:2.0-beta-dev5(Release2.0-RC1)             **\n\
     **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
     **Author:Super111                                   **\n\
     **Homepage:https://gitee.com/Linux-Tool             **\n\
