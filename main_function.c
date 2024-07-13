@@ -388,16 +388,6 @@ void advance_of_portage(){
         }
         else if (_choose_5_ == 6)
         {
-            printf("None\n");
-            sleep(10);
-            cls();
-            portage_manage_menu();
-            printf("Please input a number:");
-            scanf("%d",&_choose_5_);
-            getchar();
-        }
-        else if (_choose_5_ == 7)
-        {
             sleep(1);
             cls();
             break;
