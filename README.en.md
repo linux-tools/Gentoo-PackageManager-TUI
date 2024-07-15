@@ -50,27 +50,23 @@ MASK:
 With the MASK tag,we can lock the version of a package or block packages that we don't need. However, for system updates, this operation is more dangerous, and you need to consider the dependency problems caused by USE tags.The masking of packages is related to ACCEPT_KEYWORDS tags.
 
 e.g.
-![图 6](images/c5092ecccf234c21c49ae706da5e2e5e33be23c6f0630e9dea19b05ac4f81b7b.png)  
+![Figure 5](images/c5092ecccf234c21c49ae706da5e2e5e33be23c6f0630e9dea19b05ac4f81b7b.png)  
 
 #### Introduction to the software interface
 
 the following interface is screenshotted on gnome45:
 
-This is the main page of the software:
+![Figure 6](images/888ad94d96e1dd525cb553229b9610e21cf7b1cde81d71657b0584ec047dc4f6.png)  
 
-![Figure 5](images/823e5dbdd6b03d0f55c3900960ef887bdc7c79767b1495900db92746db44013e.png)
+![Figure 7](images/4571f69f63226806978ea6ba413a32a48ef2e68fe527538b30457f2c2ff6cc94.png)  
 
-This is the package management page:
+![Figure 8](images/d33ec84f368e6e052634b3447ae2cf365b7d367dcd319c47a14b86be1d63771c.png)  
 
-![Figure 6](images/f9cce90da395b82b5a0cea467b83f00e5a4788b8d82c2130bd9b47092e5fb0ec.png)
+![Figure 9](images/36a5047f45da11e8265ea5cc6c70fe4a42b79b2a1d14d0447b81b54e6d0a906b.png)  
 
-This is the menu for editing the repository:
+![Figure 10](images/f466783ebc0fbb1bb0154fca3e508bd6fa19c241de294f738e9f628d99a79bd4.png)  
 
-![Figure 7](images/13c2833c8458bdfbb4136ec176db9c92bb6a58e333f49c21498082ac2c29f3ad.png)
-
-This is the system update interface:
-
-![Figure 8](images/ff5d2da03c9b02f1b27c6e4cb74f11f2e11956e6023bed70a0e08ecbf17ec781.png)
+![Figure 11](images/045204cea7fe0045d331b51f837308b6cb3c427d70aa47e5734608469eb379a5.png)
 
 #### Author's statement
 

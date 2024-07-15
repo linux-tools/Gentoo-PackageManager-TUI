@@ -186,7 +186,6 @@ void repository_manage(){
 void advance_of_portage(){
     sleep(1);
     cls();
-    initialization_of_relate_variables();
     portage_manage_menu();
     printf("Please input a number:");
     scanf("%d",&_choose_5_);
@@ -224,7 +223,7 @@ void advance_of_portage(){
                     create_USE(_create_in_portage);
                     strcpy(_create_in_portage,"");
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     break;
                 }
                 else if (_choose_in_portage_ == 2)
@@ -235,7 +234,7 @@ void advance_of_portage(){
                     create_ACCEPT(_create_in_portage);
                     strcpy(_create_in_portage,"");
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     break;
                 }
                 else if (_choose_in_portage_ == 3)
@@ -246,7 +245,7 @@ void advance_of_portage(){
                     create_MASK(_create_in_portage);
                     strcpy(_create_in_portage,"");
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     break;
                 }
                 else
@@ -279,7 +278,7 @@ void advance_of_portage(){
                     edit_USE(_edit_in_portage);
                     strcpy(_edit_in_portage,"");
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     break;
                 }
                 else if (_choose_in_portage_ == 2)
@@ -290,7 +289,7 @@ void advance_of_portage(){
                     edit_ACCEPT(_edit_in_portage);
                     strcpy(_edit_in_portage,"");
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     break;
                 }
                 else if (_choose_in_portage_ == 3)
@@ -301,7 +300,7 @@ void advance_of_portage(){
                     edit_MASK(_edit_in_portage);
                     strcpy(_edit_in_portage,"");
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     break;
                 }
                 else
@@ -334,7 +333,7 @@ void advance_of_portage(){
                     delete_USE(_delete_in_portage);
                     strcpy(_delete_in_portage,"");
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     break;
                 }
                 else if (_choose_in_portage_ == 2)
@@ -345,7 +344,7 @@ void advance_of_portage(){
                     delete_ACCEPT(_delete_in_portage);
                     strcpy(_delete_in_portage,"");
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     break;
                 }
                 else if (_choose_in_portage_ == 3)
@@ -356,7 +355,7 @@ void advance_of_portage(){
                     delete_MASK(_delete_in_portage);
                     strcpy(_delete_in_portage,"");
                     printf("Returning...\n");
-                    sleep(3);
+                    sleep(1);
                     break;
                 }
                 else
@@ -641,7 +640,7 @@ void about(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **Version:2.0-beta-dev5(Release2.0-RC1)             **\n\
+    **Version:v2.0-beta-dev(Release 2.0)                **\n\
     **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
     **Author:Super111                                   **\n\
     **Homepage:https://gitee.com/Linux-Tool             **\n\

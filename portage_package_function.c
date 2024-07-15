@@ -24,7 +24,7 @@ char package_install_binary(char a[255]){//Gentoo's packages installation founct
     1.permit the operate\n\
     2 continue to install without executing getuto.\n\
     Warning: Please don't run it again or you must delete /etc/portage/gnupg to re-execute getuto\n\
-    to recover the ability to install binary packages unless you had never run getuto tu refresh keys!\n\
+    to recover the ability to install binary packages unless you had never run getuto to refresh keys!\n\
     Please input:");
     scanf("%d",&b);
     while(b)
