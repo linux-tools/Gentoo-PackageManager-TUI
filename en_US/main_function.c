@@ -377,8 +377,8 @@ void advance_of_portage(){
             recover_backup();
             system("tree -lhp $_PORTAGE_USE $_PORTAGE_ACCEPT $_PORTAGE_MASK");
             printf("If you can check the package.use,package.accept_keywords,package.mask content directory, it means that the recovery has been successful, otherwise please confirm whether it is in backup has written content or reported to Bug.\n");
-            printf("Return after 10 seconds\n");
-            sleep(10);
+            printf("Return after 3 seconds\n");
+            sleep(3);
             cls();
             portage_manage_menu();
             printf("Please input a munber:");

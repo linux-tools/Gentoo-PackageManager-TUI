@@ -2,8 +2,10 @@ CC=gcc
 OBJS=main.o portage_package_function.o main_function.o portage_manage.o main_menu.c
 CFLAGS=-c -Wall -g
 BINDIR=/usr/bin
-gentoo-packagemanager:$(OBJS)
-	$(CC) $(OBJS) -o gentoo-packagemanager
+gentoo-packagemanager-en:$(OBJS) ECHO
+	$(CC) $(OBJS) -o gentoo-packagemanager-en
+ECHO:
+	@echo "Only test"
 
 main.o:main.c
 	$(CC) main.c $(CFLAGS) -o main.o
@@ -17,15 +19,13 @@ portage_manage.o:portage_manage.c
 	$(CC) portage_manage.c $(CFLAGS) -o portage_manage.o
 
 clean:
-	$(RM) *.o gentoo-packagemanager -r
+	$(RM) *.o gentoo-packagemanager-en -r
 install:
 	install -d $(BINDIR)
-	install -m 0755 gentoo-packagemanager $(BINDIR)
-	env-update
+	install -m 0755 gentoo-packagemanager-en $(BINDIR)
 	. /etc/profile
 clean_excess_files:
 	$(RM) *.o
 uninstall:
-	rm $(BINDIR)/gentoo-packagemanager
-	env-update
+	rm $(BINDIR)/gentoo-packagemanager-en
 	. /etc/profile
