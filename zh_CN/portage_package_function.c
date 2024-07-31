@@ -20,12 +20,12 @@ char package_install_binary(char a[255]){//Gentoo's packages installation founct
     system("clear");
     sleep(1);
     int b;
-    printf("Do you want to run 'getuto' to refresh the binary package related keys?\n\
-    1.permit the operate\n\
-    2 continue to install without executing getuto.\n\
-    Warning: Please don't run it again or you must delete /etc/portage/gnupg to re-execute getuto\n\
-    to recover the ability to install binary packages unless you had never run getuto to refresh keys!\n\
-    Please input:");
+    printf("您想运行“getuto”来刷新与二进制包相关的密钥吗？\n\
+    1.允许操作\n\
+    2.继续安装而不执行getuto\n\
+    警告：请不要再次运行它，否则必须删除/etc/portage/gnupg才能重新执行getuto\n\
+    恢复安装二进制包的能力，除非您从未运行过getuto来刷新密钥！\n\
+    请输入:");
     scanf("%d",&b);
     while(b)
     {
@@ -42,12 +42,12 @@ char package_install_binary(char a[255]){//Gentoo's packages installation founct
         else
         {
             system("clear");
-            printf("Do you want to run 'getuto' to refresh the binary package related keys?\n\
-            1.permit the operate\n\
-            2.continue to install without executing getuto.\n\
-            Warning: Please don't run it again or you must delete /etc/portage/gnupg to rerun getuto\n\
-            to recover the ability to install binary packages unless you had never run getuto to refresh keys!\n\
-            Please input:");
+            printf("您想运行“getuto”来刷新与二进制包相关的密钥吗？\n\
+            1.允许操作\n\
+            2.继续安装而不执行getuto\n\
+            警告：请不要再次运行它，否则必须删除/etc/portage/gnupg才能重新运行getuto\n\
+            恢复安装二进制包的能力，除非您从未运行过getuto来刷新密钥！\n\
+            请输入:");
             scanf("%d",&b);
         }
     }
@@ -81,12 +81,12 @@ void system_update_src(){
 }
 void system_update_binary(){
     int a;
-    printf("Do you want to run 'getuto' to refresh the binary package related keys?\n\
-    1.permit the operate\n\
-    2 continue to install without executing getuto.\n\
-    Warning: Please don't run it again or you must delete /etc/portage/gnupg to rerun getuto\n\
-    to recover the ability to install binary packages unless you had never run getuto tu refresh keys!\n\
-    Please input:");
+    printf("您想运行“getuto”来刷新与二进制包相关的密钥吗？\n\
+    1.允许操作\n\
+    2 继续安装而不执行getuto\n\
+    警告：请不要再次运行它，否则必须删除/etc/portage/gnupg才能重新运行getuto\n\
+    恢复安装二进制包的能力，除非您从未运行过getuto来刷新密钥！\n\
+    请输入:");
     scanf("%d",&a);
     while(a)
     {
@@ -103,12 +103,12 @@ void system_update_binary(){
         else
         {
             system("clear");
-            printf("Do you want to run 'getuto' to refresh the binary package related keys?\n\
-            1.permit the operate\n\
-            2.continue to install without executing getuto.\n\
-            Warning: Please don't run it again or you must delete /etc/portage/gnupg to rerun getuto\n\
-            to recover the ability to install binary packages unless you had never run getuto tu refresh keys!\n\
-            Please input:");
+            printf("您想运行“getuto”来刷新与二进制包相关的密钥吗？\n\
+            1.允许操作\n\
+            2.继续安装而不执行getuto\n\
+            警告：请不要再次运行它，否则必须删除/etc/portage/gnupg才能重新运行getuto\n\
+            恢复安装二进制包的能力，除非您从未运行过getuto来刷新密钥！\n\
+            请输入:");
             scanf("%d",&a);
         }
     }
