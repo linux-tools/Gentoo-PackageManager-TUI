@@ -8,10 +8,13 @@ zh:
 	make -C zh_CN
 en:
 	make -C en_US
-clean:
-	make -C en_US clean && make -C zh_CN clean && rm gentoo-packagemanager-sw
+clean_all:
+	make -C en_US clean && make -C zh_CN clean && rm -rf package gentoo-packagemanager-sw gentoo-packagemanager-tui.tar.gz
 clean_excess_files:
 	make -C en_US clean_excess_files && make -C zh_CN clean_excess_files
+clean_package:
+	rm -rf package
+	rm -rf gentoo-packagemanager-tui.tar.gz
 install:
 	make -C en_US install && make -C zh_CN install
 	install -d /usr/bin/
@@ -29,3 +32,12 @@ uninstall:
 	rm /usr/bin/gentoo-packagemanager-sw
 	rm /usr/bin/gentoo-packagemanager
 	make -C en_US uninstall && make -C zh_CN uninstall
+package:
+	make -C en_US && make -C zh_CN
+	gcc gentoo-packagemanager-sw.c -o gentoo-packagemanager-sw
+	mkdir -p package/usr/bin
+	cp -r en_US/gentoo-packagemanager-en zh_CN/gentoo-packagemanager-zh gentoo-packagemanager-sw install-dependencies.sh package/usr/bin/
+	echo "sudo install -d /usr/bin/ && sudo install -m 0755 usr/bin/gentoo-packagemanager-en /usr/bin/ && sudo install -m 0755 usr/bin/gentoo-packagemanager-zh /usr/bin/ && sudo install -m 0755 usr/bin/gentoo-packagemanager-sw /usr/bin/ && sudo ln -sf /usr/bin/gentoo-packagemanager-en /usr/bin/gentoo-packagemanager" >> package/install.sh
+	echo "sudo rm -rf /usr/bin/gentoo-packagemanager-zh /usr/bin/gentoo-packagemanager-en /usr/bin/gentoo-packagemanager-sw /usr/bin/gentoo-packagemanager" >> package/uninstall.sh
+	chmod 0755 package/install.sh
+	tar -zcvf gentoo-packagemanager-tui.tar.gz package
