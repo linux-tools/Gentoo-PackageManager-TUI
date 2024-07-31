@@ -1,9 +1,7 @@
 gentoo-packagemanager-sw:gentoo-packagemanager-sw.c
 	gcc gentoo-packagemanager-sw.c -o gentoo-packagemanager-sw
-
 all:gentoo-packagemanager-sw
 	make -C en_US && make -C zh_CN
-
 zh:
 	make -C zh_CN
 en:
