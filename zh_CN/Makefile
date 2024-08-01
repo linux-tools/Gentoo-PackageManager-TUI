@@ -19,11 +19,11 @@ portage_manage.o:portage_manage.c
 clean:
 	$(RM) *.o gentoo-packagemanager-zh -r
 install:
-	install -d $(BINDIR)
-	install -m 0755 gentoo-packagemanager-zh $(BINDIR)
-	. /etc/profile
+	@install -d $(BINDIR)
+	@install -m 0755 gentoo-packagemanager-zh $(BINDIR)
+	@. /etc/profile
 clean_excess_files:
 	$(RM) *.o
 uninstall:
-	rm $(BINDIR)/gentoo-packagemanager-zh
-	. /etc/profile
+	@rm $(BINDIR)/gentoo-packagemanager-zh
+	@. /etc/profile
