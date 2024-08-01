@@ -1,15 +1,14 @@
 CC=gcc
-en_US=/usr/bin/gentoo-packagemanager-en
-zh_CN=/usr/bin/gentoo-packagemanager-zh
-SW=/usr/bin/gentoo-packagemanager-sw
-PROGRAM=/usr/bin/gentoo-packagemanager
-PACKAGE_FILES=en_US/gentoo-packagemanager-en zh_CN/gentoo-packagemanager-zh gentoo-packagemanager-sw install-dependencies.sh
+en_US=/usr/bin/genpkg-en
+zh_CN=/usr/bin/genpkg-zh
+SW=/usr/bin/genpkg-sw
+PROGRAM=/usr/bin/genpkg
+PACKAGE_FILES=en_US/genpkg-en zh_CN/genpkg-zh genpkg-sw
 PACKAGE_NAME=gentoo-packagemanager-tui
-PACKAGE_INSTALL_SCRIPT=sudo install -d /usr/bin/ && sudo install -m 0755 usr/bin/gentoo-packagemanager-en /usr/bin/ && sudo install -m 0755 usr/bin/gentoo-packagemanager-zh /usr/bin/ && sudo install -m 0755 usr/bin/gentoo-packagemanager-sw /usr/bin/ && sudo ln -sf /usr/bin/gentoo-packagemanager-en /usr/bin/gentoo-packagemanager
 
-gentoo-packagemanager-sw:gentoo-packagemanager-sw.c
-	$(CC) gentoo-packagemanager-sw.c -o -Wall gentoo-packagemanager-sw
-all:gentoo-packagemanager-sw
+genpkg-sw:genpkg-sw.c
+	$(CC) genpkg-sw.c -Wall -g -o genpkg-sw
+all:genpkg-sw
 	make -C en_US && make -C zh_CN
 zh:
 	make -C zh_CN
@@ -17,7 +16,7 @@ en:
 	make -C en_US
 
 clean_all:
-	make -C en_US clean && make -C zh_CN clean && rm -rf package gentoo-packagemanager-sw gentoo-packagemanager-tui.tar.gz
+	make -C en_US clean && make -C zh_CN clean && rm -rf package genpkg-sw gentoo-packagemanager-tui.tar.gz
 clean_excess_files:
 	make -C en_US clean_excess_files && make -C zh_CN clean_excess_files
 clean_package:
@@ -27,25 +26,38 @@ clean_package:
 install_en:
 	@make -C en_US install && make -C zh_CN install
 	@install -d /usr/bin/
-	@install -m 0755 gentoo-packagemanager-sw /usr/bin/
+	@install -m 0755 genpkg-sw /usr/bin/
 	@ln -sf $(en_US) $(SW)
 	@clear
-	@echo "you can use gentoo-packagemanager-sw to change your language!"
-	@sleep 1
-	@echo "End installation in ten seconds"
-	@sleep 10
+	@echo "you can use genpkg-sw to change your language!"
+	@sleep 3
+	@echo "End installation in three seconds"
+	@sleep 3
 	@. /etc/profile
 install_zh:
 	@make -C en_US install && make -C zh_CN install
 	@install -d /usr/bin/
-	@install -m 0755 gentoo-packagemanager-sw /usr/bin/
+	@install -m 0755 genpkg-sw /usr/bin/
 	@ln -sf $(zh_CN) $(SW)
 	@clear
-	@echo "您可以使用gentoo-packagemanager-sw命令去更改软件语言!"
-	@sleep 1
-	@echo "十秒钟后结束安装"
-	@sleep 10
+	@echo "您可以使用genpkg-sw命令去更改软件语言!"
+	@sleep 3
+	@echo "三秒钟后结束安装"
+	@sleep 3
 	@. /etc/profile
+install_all:
+	@make -C en_US install && make -C zh_CN install
+	@install -d /usr/bin/
+	@install -m 0755 genpkg-sw /usr/bin/
+	@ln -sf $(zh_CN) $(SW)
+	@clear
+	@echo "您可以使用genpkg-sw命令去更改软件语言!"
+	@echo "you can use genpkg-sw to change your language!"
+	@sleep 3
+	@echo "三秒钟后结束安装"
+	@sleep 3
+	@. /etc/profile
+
 uninstall:
 	@rm $(SW)
 	@rm $(PROGRAM)
@@ -53,10 +65,11 @@ uninstall:
 
 package:
 	make -C en_US && make -C zh_CN
-	$(CC) gentoo-packagemanager-sw.c -o gentoo-packagemanager-sw
+	$(CC) genpkg-sw.c -o genpkg-sw
 	mkdir -p package/usr/bin
 	cp -r $(PACKAGE_FILES) package/usr/bin/
-	echo $(PACKAGE_INSTALL_SCRIPT) >> package/install.sh
+	echo "sudo install -d /usr/bin/ && sudo install -m 0755 usr/bin/genpkg-en /usr/bin/ && sudo install -m 0755 usr/bin/genpkg-zh /usr/bin/ && sudo install -m 0755 usr/bin/genpkg-sw /usr/bin/ && sudo ln -sf /usr/bin/genpkg-en /usr/bin/genpkg" >> package/install.sh
 	echo "sudo rm -rf $(zh_CN) $(en_US) $(SW) $(PROGRAM)" >> package/uninstall.sh
 	chmod 0755 package/install.sh
+	chmod 0755 package/uninstall.sh
 	tar -zcvf $(PACKAGE_NAME).tar.gz package

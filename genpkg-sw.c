@@ -4,7 +4,7 @@
 int main(){
     printf("\n\
     Please choose your language:\n\
-    1.Engliah\n\
+    1.English\n\
     2.Chinese\n\
     Please choose:");
     int choose_Language;
@@ -13,12 +13,12 @@ int main(){
     {
         if (choose_Language == 1)
         {
-            system("cd /usr/bin && sudo ln -sf gentoo-packagemanager-en gentoo-packagemanager");
+            system("sudo ln -sf /usr/bin/genpkg-en /usr/bin/genpkg");
             break;
         }
         else if (choose_Language == 2)
         {
-            system("cd /usr/bin && sudo ln -sf gentoo-packagemanager-zh gentoo-packagemanager");
+            system("sudo ln -sf /usr/bin/genpkg-zh /usr/bin/genpkg");
             break;
         }
         else
@@ -26,7 +26,7 @@ int main(){
             system("clear");
             printf("\n\
             Please choose your language:\n\
-            1.Engliah\n\
+            1.English\n\
             2.Chinese\n\
             Please choose:");
             scanf("%d",&choose_Language);
