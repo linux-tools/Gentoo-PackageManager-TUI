@@ -4,18 +4,17 @@
 #include "main_menu.h"
 #include "portage_manage.h"
 
-char _user_input[255];
-char _user_choose_editor[255];//string variable
-int _choose_1_;
-int _choose_2_;
-int _choose_3_;
-int _choose_4_;
-int _choose_5_;
-int _choose_in_portage_;  //define users' inputation variable
-char _choose_repo_[255];
-char _create_in_portage[255];
-char _edit_in_portage[255];
-char _delete_in_portage[255];
+char UserInput[255];
+int choose_1;
+int choose_2;
+int choose_3;
+int choose_4;
+int choose_5;
+int ChooseInPortage;  //define users' inputation variable
+char ChooseRepo[255];
+char CreateInPortage[255];
+char EditInPortage[255];
+char DeleteInPortage[255];
 
 void cls(){
     system("clear");
@@ -25,49 +24,49 @@ void repository_manage(){
     sleep(1);
     cls();
     package_repository_edit_menu();
-    scanf("%d",&_choose_3_);
+    scanf("%d",&choose_3);
     getchar();
-    while (_choose_3_)
+    while (choose_3)
     {
-        if (_choose_3_ == 1)
+        if (choose_3 == 1)
         {
             system("eselect editor list");
-            printf("请选择:");
+            printf("Please choose:");
             int b;
             scanf("%d",&b);
             sleep(1);
             editor_choose(b);
             editor_check();
-            printf("返回中...\n");
+            printf("Returning...\n");
             sleep(1);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&_choose_3_);
+            scanf("%d",&choose_3);
             getchar();
         }
-        else if (_choose_3_ == 2)
+        else if (choose_3 == 2)
         {
             cls();
             repository_edit_src();
-            printf("返回中...\n");
+            printf("Returning...\n");
             sleep(1);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&_choose_3_);
+            scanf("%d",&choose_3);
             getchar();
         }
-        else if (_choose_3_ == 3)
+        else if (choose_3 == 3)
         {
             cls();
             repository_edit_binary();
-            printf("返回中...\n");
+            printf("Returning...\n");
             sleep(1);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&_choose_3_);
+            scanf("%d",&choose_3);
             getchar();
         }
-        else if (_choose_3_ == 4)
+        else if (choose_3 == 4)
         {
             cls();
             sleep(1);
@@ -81,94 +80,94 @@ void repository_manage(){
                 sleep(1);
                 cls();
                 package_repository_edit_menu();
-                scanf("%d",&_choose_3_);
+                scanf("%d",&choose_3);
                 getchar();
             }
             else
             {
-                printf("请按1返回:");
+                printf("Please press 1 to return:");
                 scanf("%d",&a);
                 getchar();
             }
         }
-        else if (_choose_3_ == 5)
+        else if (choose_3 == 5)
         {
             cls();
             system("eselect repository list");
-            printf("请输入要禁用的名称:");
-            scanf("%s",_choose_repo_);
+            printf("Please enter name that you want to enable:");
+            scanf("%s",ChooseRepo);
             getchar();
-            repo_enable(_choose_repo_);
-            printf("完成!\n");
-            strcpy(_choose_repo_,"");
+            repo_enable(ChooseRepo);
+            printf("Done!\n");
+            strcpy(ChooseRepo,"");
             sleep(2);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&_choose_3_);
+            scanf("%d",&choose_3);
             getchar();
         }
-        else if (_choose_3_ == 6)
+        else if (choose_3 == 6)
         {
             cls();
             system("eselect repository list");
-            printf("请输入要禁用的名称:");
-            scanf("%s",_choose_repo_);
+            printf("Please enter name that you want to disable:");
+            scanf("%s",ChooseRepo);
             getchar();
-            repo_disable(_choose_repo_);
-            printf("完成!\n");
-            strcpy(_choose_repo_,"");
+            repo_disable(ChooseRepo);
+            printf("Done!\n");
+            strcpy(ChooseRepo,"");
             sleep(3);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&_choose_3_);
+            scanf("%d",&choose_3);
             getchar();
         }
-        else if (_choose_3_ == 7)
+        else if (choose_3 == 7)
         {
             cls();
             system("eselect repository list");
-            printf("请输入要删除的名称:");
-            scanf("%s",_choose_repo_);
+            printf("Please enter name that you want to remove:");
+            scanf("%s",ChooseRepo);
             getchar();
-            repo_remove(_choose_repo_);
-            printf("完成!\n");
-            strcpy(_choose_repo_,"");
+            repo_remove(ChooseRepo);
+            printf("Done!\n");
+            strcpy(ChooseRepo,"");
             sleep(3);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&_choose_3_);
+            scanf("%d",&choose_3);
             getchar();
             }
-        else if (_choose_3_ == 8)
+        else if (choose_3 == 8)
         {
             cls();
             system("eselect repository list");
             printf("\n\
-            请输入您要自己添加的自定义存储库。\n\
-            例子：<仓库名称> <同步方式（可决定你的URI地址）> <仓库的URI>\n\
-            请输入:");
-            scanf("%[^\n]",_choose_repo_);
+            Please input custom repository that you want to add by your own\n\
+            e.g. <name> <sync-type> <sync-uri>\n\
+            Please input:");
+            scanf("%[^\n]",ChooseRepo);
             getchar();
-            repo_add(_choose_repo_);
-            printf("完成!\n");
+            repo_add(ChooseRepo);
+            printf("Done!\n");
             sleep(1);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&_choose_3_);
+            scanf("%d",&choose_3);
             getchar();
         }
-        else if (_choose_3_ == 9)
+        else if (choose_3 == 9)
         {
             cls();
             system("sudo emerge --sync");
-            printf("完成!");
+            printf("Done!");
             sleep(1);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&_choose_3_);
+            scanf("%d",&choose_3);
             getchar();
         }                    
-        else if (_choose_3_ == 10)
+        else if (choose_3 == 10)
         {
             sleep(1);
             break;
@@ -177,7 +176,7 @@ void repository_manage(){
         {
             cls();
             package_repository_edit_menu();
-            scanf("%d",&_choose_3_);
+            scanf("%d",&choose_3);
             getchar();
         }
     }
@@ -187,64 +186,64 @@ void advance_of_portage(){
     sleep(1);
     cls();
     portage_manage_menu();
-    printf("请输入一个数字:");
-    scanf("%d",&_choose_5_);
+    printf("Please input a number:");
+    scanf("%d",&choose_5);
     getchar();
-    while (_choose_5_)
+    while (choose_5)
     {
-        if (_choose_5_ == 1)
+        if (choose_5 == 1)
         {
             cls();
             backup();
             system("tree -lhp $HOME/.portage-tags/backup");
-            printf("如果您可以检查备份内容目录，则表示备份已成功，否则请确认它是否在/etc/portage/package.use、/etc/portage-package.eccept_keywords、/etc/portage/package.mask中已写入内容或向Bug报告。\n");
-            printf("3秒后返回\n");
-            sleep(3);
+            printf("If you can check the backup content directory, it means that the backup has been successful, otherwise please confirm whether it is in /etc/portage/package.use,/etc/portage/package.accept_keywords,/etc/portage/package.mask has written content or reported to Bug.\n");
+            printf("Return after 10 seconds\n");
+            sleep(10);
             cls();
             portage_manage_menu();
-            printf("请输入一个数字:");
-            scanf("%d",&_choose_5_);
+            printf("Please input a number:");
+            scanf("%d",&choose_5);
             getchar();
         }
-        else if (_choose_5_ == 2)
+        else if (choose_5 == 2)
         {
             sleep(1);
             cls();
             choose_create_file_type_menu_in_portage();
-            scanf("%d",&_choose_in_portage_);
+            scanf("%d",&ChooseInPortage);
             getchar();
-            while (_choose_in_portage_)
+            while (ChooseInPortage)
             {
-                if (_choose_in_portage_ == 1)
+                if (ChooseInPortage == 1)
                 {
-                    printf("请输入要创建的USE文件:");
-                    scanf("%[^\n]",_create_in_portage);
+                    printf("Please input a USE file that you want to create:");
+                    scanf("%[^\n]",CreateInPortage);
                     getchar();
-                    create_USE(_create_in_portage);
-                    strcpy(_create_in_portage,"");
-                    printf("返回中...\n");
+                    create_USE(CreateInPortage);
+                    strcpy(CreateInPortage,"");
+                    printf("Returning...\n");
                     sleep(1);
                     break;
                 }
-                else if (_choose_in_portage_ == 2)
+                else if (ChooseInPortage == 2)
                 {
-                    printf("请输入要创建的ACCEPT_KEYWORDS文件:");
-                    scanf("%[^\n]",_create_in_portage);
+                    printf("Please input a ACCEPT_KEYWORDS file that you want to create:");
+                    scanf("%[^\n]",CreateInPortage);
                     getchar();
-                    create_ACCEPT(_create_in_portage);
-                    strcpy(_create_in_portage,"");
-                    printf("返回中...\n");
+                    create_ACCEPT(CreateInPortage);
+                    strcpy(CreateInPortage,"");
+                    printf("Returning...\n");
                     sleep(1);
                     break;
                 }
-                else if (_choose_in_portage_ == 3)
+                else if (ChooseInPortage == 3)
                 {
-                    printf("请输入要创建的MASK文件:");
-                    scanf("%[^\n]",_create_in_portage);
+                    printf("Please input MASK file that you want to create:");
+                    scanf("%[^\n]",CreateInPortage);
                     getchar();
-                    create_MASK(_create_in_portage);
-                    strcpy(_create_in_portage,"");
-                    printf("返回中...\n");
+                    create_MASK(CreateInPortage);
+                    strcpy(CreateInPortage,"");
+                    printf("Returning...\n");
                     sleep(1);
                     break;
                 }
@@ -252,54 +251,54 @@ void advance_of_portage(){
                 {
                     cls();
                     choose_create_file_type_menu_in_portage();
-                    scanf("%d",&_choose_in_portage_);
+                    scanf("%d",&ChooseInPortage);
                     getchar();
                 }
             }
             portage_manage_menu();
-            printf("请输入一个数字:");
-            scanf("%d",&_choose_5_);
+            printf("Please input a number:");
+            scanf("%d",&choose_5);
             getchar();            
         }
-        else if (_choose_5_ == 3)
+        else if (choose_5 == 3)
         {
             sleep(1);
             cls();
             choose_edit_file_type_menu_in_portage();
-            scanf("%d",&_choose_in_portage_);
+            scanf("%d",&ChooseInPortage);
             getchar();
-            while (_choose_in_portage_)
+            while (ChooseInPortage)
             {
-                if (_choose_in_portage_ == 1)
+                if (ChooseInPortage == 1)
                 {
-                    printf("请输入要编辑的USE文件:");
-                    scanf("%[^\n]",_edit_in_portage);
+                    printf("Please input a USE file that you want to edit:");
+                    scanf("%[^\n]",EditInPortage);
                     getchar();
-                    edit_USE(_edit_in_portage);
-                    strcpy(_edit_in_portage,"");
-                    printf("返回中...\n");
+                    edit_USE(EditInPortage);
+                    strcpy(EditInPortage,"");
+                    printf("Returning...\n");
                     sleep(1);
                     break;
                 }
-                else if (_choose_in_portage_ == 2)
+                else if (ChooseInPortage == 2)
                 {
-                    printf("请输入要编辑的ACCEPT_KEYWORDS文件:");
-                    scanf("%[^\n]",_edit_in_portage);
+                    printf("Please input a ACCEPT_KEYWORDS file that you want to edit:");
+                    scanf("%[^\n]",EditInPortage);
                     getchar();
-                    edit_ACCEPT(_edit_in_portage);
-                    strcpy(_edit_in_portage,"");
-                    printf("返回中...\n");
+                    edit_ACCEPT(EditInPortage);
+                    strcpy(EditInPortage,"");
+                    printf("Returning...\n");
                     sleep(1);
                     break;
                 }
-                else if (_choose_in_portage_ == 3)
+                else if (ChooseInPortage == 3)
                 {
-                    printf("请输入要编辑的MASK文件:");
-                    scanf("%[^\n]",_edit_in_portage);
+                    printf("Please input MASK file that you want to edit:");
+                    scanf("%[^\n]",EditInPortage);
                     getchar();
-                    edit_MASK(_edit_in_portage);
-                    strcpy(_edit_in_portage,"");
-                    printf("返回中...\n");
+                    edit_MASK(EditInPortage);
+                    strcpy(EditInPortage,"");
+                    printf("Returning...\n");
                     sleep(1);
                     break;
                 }
@@ -307,54 +306,54 @@ void advance_of_portage(){
                 {
                     cls();
                     choose_create_file_type_menu_in_portage();
-                    scanf("%d",&_choose_in_portage_);
+                    scanf("%d",&ChooseInPortage);
                     getchar();
                 }
             }
             portage_manage_menu();
-            printf("请输入一个数字:");
-            scanf("%d",&_choose_5_);
+            printf("Please input a number:");
+            scanf("%d",&choose_5);
             getchar();
         }
-        else if (_choose_5_ == 4)
+        else if (choose_5 == 4)
         {
             sleep(1);
             cls();
             choose_delete_file_type_menu_in_portage();
-            scanf("%d",&_choose_in_portage_);
+            scanf("%d",&ChooseInPortage);
             getchar();
-            while (_choose_in_portage_)
+            while (ChooseInPortage)
             {
-                if (_choose_in_portage_ == 1)
+                if (ChooseInPortage == 1)
                 {
-                    printf("请输入要删除的USE文件:");
-                    scanf("%[^\n]",_delete_in_portage);
+                    printf("Please input a USE file that you want to delete:");
+                    scanf("%[^\n]",DeleteInPortage);
                     getchar();
-                    delete_USE(_delete_in_portage);
-                    strcpy(_delete_in_portage,"");
-                    printf("返回中\n");
+                    delete_USE(DeleteInPortage);
+                    strcpy(DeleteInPortage,"");
+                    printf("Returning...\n");
                     sleep(1);
                     break;
                 }
-                else if (_choose_in_portage_ == 2)
+                else if (ChooseInPortage == 2)
                 {
-                    printf("请输入要删除的ACCEPT_KEYWORDS文件:");
-                    scanf("%[^\n]",_delete_in_portage);
+                    printf("Please input a ACCEPT_KEYWORDS file that you want to delete:");
+                    scanf("%[^\n]",DeleteInPortage);
                     getchar();
-                    delete_ACCEPT(_delete_in_portage);
-                    strcpy(_delete_in_portage,"");
-                    printf("返回中...\n");
+                    delete_ACCEPT(DeleteInPortage);
+                    strcpy(DeleteInPortage,"");
+                    printf("Returning...\n");
                     sleep(1);
                     break;
                 }
-                else if (_choose_in_portage_ == 3)
+                else if (ChooseInPortage == 3)
                 {
-                    printf("请输入要删除的MASK文件:");
-                    scanf("%[^\n]",_delete_in_portage);
+                    printf("Please input MASK file that you want to delete:");
+                    scanf("%[^\n]",DeleteInPortage);
                     getchar();
-                    delete_MASK(_delete_in_portage);
-                    strcpy(_delete_in_portage,"");
-                    printf("返回中...\n");
+                    delete_MASK(DeleteInPortage);
+                    strcpy(DeleteInPortage,"");
+                    printf("Returning...\n");
                     sleep(1);
                     break;
                 }
@@ -362,30 +361,30 @@ void advance_of_portage(){
                 {
                     cls();
                     choose_create_file_type_menu_in_portage();
-                    scanf("%d",&_choose_in_portage_);
+                    scanf("%d",&ChooseInPortage);
                     getchar();
                 }
             }
             portage_manage_menu();
-            printf("请输入一个数字:");
-            scanf("%d",&_choose_5_);
+            printf("Please input a number:");
+            scanf("%d",&choose_5);
             getchar();
         }
-        else if (_choose_5_ == 5)
+        else if (choose_5 == 5)
         {
             cls();
             recover_backup();
             system("tree -lhp $_PORTAGE_USE $_PORTAGE_ACCEPT $_PORTAGE_MASK");
-            printf("如果您可以检查package.use、package.eccept_keywords、package.mask内容目录，则表示恢复已成功，否则请确认备份中是否有写入内容或报告Bug。\n");
-            printf("10秒后返回\n");
-            sleep(10);
+            printf("If you can check the package.use,package.accept_keywords,package.mask content directory, it means that the recovery has been successful, otherwise please confirm whether it is in backup has written content or reported to Bug.\n");
+            printf("Return after 3 seconds\n");
+            sleep(3);
             cls();
             portage_manage_menu();
-            printf("请输入一个数字:");
-            scanf("%d",&_choose_5_);
+            printf("Please input a munber:");
+            scanf("%d",&choose_5);
             getchar();
         }
-        else if (_choose_5_ == 6)
+        else if (choose_5 == 6)
         {
             sleep(1);
             cls();
@@ -395,8 +394,8 @@ void advance_of_portage(){
         {
             cls();
             portage_manage_menu();
-            printf("请输入一个数字:");
-            scanf("%d",&_choose_5_);
+            printf("Please input a number:");
+            scanf("%d",&choose_5);
             getchar();
         }  
     }
@@ -406,20 +405,20 @@ void manage_package_and_repository(){
     sleep(1);
     cls();
     menu_folk();
-    scanf("%d",&_choose_1_);
+    scanf("%d",&choose_1);
     getchar();
-    while (_choose_1_)
+    while (choose_1)
     {
-        if (_choose_1_ == 1)
+        if (choose_1 == 1)
         {
             sleep(1);
             cls();
             check_installed_packages_menu();
-            scanf("%s",_user_input);
+            scanf("%s",UserInput);
             getchar();
-            package_check(_user_input);
-            strcpy(_user_input,"");
-            printf("请输入1返回:");
+            package_check(UserInput);
+            strcpy(UserInput,"");
+            printf("Please input 1 to return:");
             int a;//checking "1" key
             scanf("%d",&a);
             getchar();
@@ -428,29 +427,29 @@ void manage_package_and_repository(){
                 sleep(1);
                 cls();
                 menu_folk();
-                scanf("%d",&_choose_1_);
+                scanf("%d",&choose_1);
                 getchar();
             }
             else
             {
-                printf("请输入1返回:");
+                printf("Please input 1 to return:");
                 scanf("%d",&a);
                 getchar();
             }
         }
-        else if (_choose_1_ == 2)
+        else if (choose_1 == 2)
         {
             sleep(1);
             cls();
             package_uninstall_menu();
-            scanf("%[^\n]",_user_input);
+            scanf("%[^\n]",UserInput);
             getchar();
-            if (strcmp(_user_input,"b") != 0 )
+            if (strcmp(UserInput,"b") != 0 )
             {
-                package_uninstall(_user_input);
-                strcpy(_user_input,"");
+                package_uninstall(UserInput);
+                strcpy(UserInput,"");
             
-                printf("请输入1返回:");
+                printf("Please input 1 to return:");
                 int a;//checking "1" key
                 scanf("%d",&a);
                 getchar();
@@ -459,12 +458,12 @@ void manage_package_and_repository(){
                     sleep(1);
                     cls();
                     menu_folk();
-                    scanf("%d",&_choose_1_);
+                    scanf("%d",&choose_1);
                     getchar();
                 }
                 else
                 {
-                    printf("请输入1返回:");
+                    printf("Please input 1 to return:");
                     scanf("%d",&a);
                     getchar();
                 }
@@ -474,37 +473,37 @@ void manage_package_and_repository(){
                 sleep(1);
                 cls();
                 menu_folk();
-                scanf("%d",&_choose_1_);
+                scanf("%d",&choose_1);
                 getchar();
             }
         }
-        else if (_choose_1_ == 3)
+        else if (choose_1 == 3)
         {
             sleep(1);
             cls();
             package_install_menu();
-            scanf("%[^\n]",_user_input);
+            scanf("%[^\n]",UserInput);
             getchar();
-            if (strcmp(_user_input,"b") != 0)
+            if (strcmp(UserInput,"b") != 0)
             {
                 printf("\n\
-                请选择一种在您的系统上安装软件包的方法：\n\
-                1.从src安装\n\
-                2.从二进制安装（并非每个包都可以通过二进制包安装）\n\
-                3.返回\n\
-                请选择：");
-                scanf("%d",&_choose_4_);
+                Please choose a way to install packages on your system:\n\
+                1.install from src\n\
+                2.install from binary(NOT EVERY PACKAGE CAN BE INSTALL BY BINARY PACKAGE)\n\
+                3.return\n\
+                Please choose:");
+                scanf("%d",&choose_4);
                 getchar();
-                if (_choose_4_ == 1)
+                if (choose_4 == 1)
                 {
-                    package_install_src(_user_input);
+                    package_install_src(UserInput);
                 }
-                else if (_choose_4_ == 2)
+                else if (choose_4 == 2)
                 {
-                    package_install_binary(_user_input);
+                    package_install_binary(UserInput);
                 }
-                strcpy(_user_input,"");
-                printf("请输入1返回:");
+                strcpy(UserInput,"");
+                printf("Please input 1 to return:");
                 int a;//checking "1" key
                 scanf("%d",&a);
                 getchar();
@@ -513,12 +512,12 @@ void manage_package_and_repository(){
                     sleep(1);
                     cls();
                     menu_folk();
-                    scanf("%d",&_choose_1_);
+                    scanf("%d",&choose_1);
                     getchar();
                 }
                 else
                 {
-                    printf("请输入1返回:");
+                    printf("Please input 1 to return:");
                     scanf("%d",&a);
                     getchar();
                 }
@@ -528,22 +527,22 @@ void manage_package_and_repository(){
                 sleep(1);
                 cls();
                 menu_folk();
-                scanf("%d",&_choose_1_);
+                scanf("%d",&choose_1);
                 getchar();
             }
         }    
-        else if (_choose_1_ == 4)
+        else if (choose_1 == 4)
         {
             sleep(1);
             cls();
-            printf("搜索包或输入b返回上一菜单\n\
-                    请输入：");
-            scanf("%s",_user_input);
-            if (strcmp(_user_input,"b") != 0)
+            printf("Search packages or input b to go back to the previous menu\n\
+            Please input:");
+            scanf("%s",UserInput);
+            if (strcmp(UserInput,"b") != 0)
             {
-                package_search(_user_input);
-                strcpy(_user_input,"");
-                printf("请输入1返回:");
+                package_search(UserInput);
+                strcpy(UserInput,"");
+                printf("Please input 1 to return:");
                 int a;//checking "1" key
                 scanf("%d",&a);
                 getchar();
@@ -552,12 +551,12 @@ void manage_package_and_repository(){
                     sleep(1);
                     cls();
                     menu_folk();
-                    scanf("%d",&_choose_1_);
+                    scanf("%d",&choose_1);
                     getchar();
                 }
                 else
                 {
-                    printf("请输入1返回:");
+                    printf("Please press 1 to return:");
                     scanf("%d",&a);
                     getchar();
                 }
@@ -567,28 +566,28 @@ void manage_package_and_repository(){
                 sleep(1);
                 cls();
                 menu_folk();
-                scanf("%d",&_choose_1_);
+                scanf("%d",&choose_1);
                 getchar();
             }
         }
-        else if (_choose_1_ == 5)
+        else if (choose_1 == 5)
         {
             repository_manage();
             sleep(1);
             cls();
             menu_folk();
-            scanf("%d",&_choose_1_);
+            scanf("%d",&choose_1);
             getchar();                    
         }
-        else if (_choose_1_ == 6)
+        else if (choose_1 == 6)
         {
             advance_of_portage();
             menu_folk();
-            scanf("%d",&_choose_1_);
+            scanf("%d",&choose_1);
             getchar();
         }
         
-        else if (_choose_1_ == 7)
+        else if (choose_1 == 7)
         {
             sleep(1);
             cls();
@@ -598,7 +597,7 @@ void manage_package_and_repository(){
         {
             cls();
             menu_folk();
-            scanf("%d",&_choose_1_);
+            scanf("%d",&choose_1);
             getchar();
         }  
     }
@@ -608,21 +607,21 @@ void update_system(){
     sleep(1);
     cls();
     update_system_menu();
-    scanf("%d",&_choose_2_);
+    scanf("%d",&choose_2);
     getchar();
-    if (_choose_2_ == 1)
+    if (choose_2 == 1)
     {
         system_update_src();
         sleep(1);
         cls();
     }
-    else if (_choose_2_ == 2)
+    else if (choose_2 == 2)
     {
         system_update_binary();
         sleep(1);
         cls();
     }
-    else if (_choose_2_== 3)
+    else if (choose_2== 3)
     {
         cls();
     }
@@ -630,7 +629,7 @@ void update_system(){
     {
         cls();
         update_system_menu();
-        scanf("%d",&_choose_2_);
+        scanf("%d",&choose_2);
         getchar();  
     }
 }
@@ -640,14 +639,14 @@ void about(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **版本:v3.0-beta-dev2                                **\n\
-    **软件依赖:gentoolkit,eselect-repository,sudo,tree   **\n\
-    **作者:Super111                                      **\n\
-    **作者主页:https://gitee.com/Linux-Tool              **\n\
+    **Version:v3.0-beta-dev2                            **\n\
+    **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
+    **Author:Super111                                   **\n\
+    **Homepage:https://gitee.com/Linux-Tool             **\n\
     ******************************************************\n\
     ******************************************************\n\
     ");
-    printf("请输入1返回:");
+    printf("Please input 1 to return:");
     int a;//checking "1" key
     scanf("%d",&a);
     getchar();
@@ -660,7 +659,7 @@ void about(){
         }
         else
         {
-            printf("请输入1返回:");
+            printf("Please press 1 to return:");
             scanf("%d",&a);
             getchar();
         }
