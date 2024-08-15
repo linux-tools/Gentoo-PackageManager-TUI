@@ -12,28 +12,40 @@ int main(){
     scanf("%d",&_choose_);
     while (_choose_)
     {
-        if (_choose_ == 1)//Go to the Package Management submenu
+        if (_choose_ == 1)//转到“包管理”子菜单
         {
             manage_package_and_repository();
             menu_main();
             scanf("%d",&_choose_);
             getchar();   
         }
-        else if (_choose_ == 2)//Go to the System Update option
+        else if (_choose_ == 2)//转到系统更新选项
         {
             update_system();
             menu_main();
             scanf("%d",&_choose_);
             getchar();
         }
-        else if (_choose_ == 3)//Check the software version
+        else if (_choose_ == 3)//检查软件版本
         {
             about();
             menu_main();
             scanf("%d",&_choose_);
             getchar();
         }
-        else if (_choose_ == 4)//Exit software
+        else if (_choose_ == 4)
+        {
+            cls();
+            system("genpkg-sw");
+            printf("需要重新启动才能生效...\n");
+            sleep(2);
+            cls();
+            menu_main();
+            scanf("%d",&_choose_);
+            getchar();
+        }
+        
+        else if (_choose_ == 5)//退出软件
         {
             cls();
             printf("See you next time!\n");
@@ -50,4 +62,4 @@ int main(){
     }  
     return 0;
 }
-//This main.c file contains only the main part of the software, and there is a function multiple encapsulation
+//这个main.c文件只包含软件的主要部分，并且有一个函数多重封装

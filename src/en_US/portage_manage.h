@@ -1,7 +1,6 @@
 #ifndef PORTAGE_MANAGE_H
 
-void create_floder_in_portage();/*Create floders in "/etc/portage/package.use  /etc/portage/package.accept_keyworlds /etc/portage/package.mask" 
-to facilitate the management of the software's USE tags,mask logos,and other functions*/
+void create_floder_in_portage();
 
 void backup();
 
