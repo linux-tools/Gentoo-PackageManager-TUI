@@ -109,4 +109,4 @@ char delete_ACCEPT(char a[255]){
     sleep(1);
     system("clear");
     return 0;
-}
+}//从第4行至112行包括portage系统的一些操作

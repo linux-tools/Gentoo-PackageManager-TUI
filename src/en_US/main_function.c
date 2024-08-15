@@ -18,7 +18,7 @@ char DeleteInPortage[255];
 
 void cls(){
     system("clear");
-}//clear screen message
+}
 
 void repository_manage(){
     sleep(1);
@@ -72,10 +72,10 @@ void repository_manage(){
             sleep(1);
             system("eselect repository list");
             printf("Please input 1 to return:");
-            int a;//checking "1" key
-            scanf("%d",&a);
+            int key;//checking "1" key
+            scanf("%d",&key);
             getchar();
-            if (a == 1)
+            if (key == 1)
             {
                 sleep(1);
                 cls();
@@ -86,7 +86,7 @@ void repository_manage(){
             else
             {
                 printf("Please press 1 to return:");
-                scanf("%d",&a);
+                scanf("%d",&key);
                 getchar();
             }
         }
@@ -419,10 +419,10 @@ void manage_package_and_repository(){
             package_check(UserInput);
             strcpy(UserInput,"");
             printf("Please input 1 to return:");
-            int a;//checking "1" key
-            scanf("%d",&a);
+            int key;//checking "1" key
+            scanf("%d",&key);
             getchar();
-            if (a == 1)
+            if (key == 1)
             {
                 sleep(1);
                 cls();
@@ -433,7 +433,7 @@ void manage_package_and_repository(){
             else
             {
                 printf("Please input 1 to return:");
-                scanf("%d",&a);
+                scanf("%d",&key);
                 getchar();
             }
         }
@@ -450,10 +450,10 @@ void manage_package_and_repository(){
                 strcpy(UserInput,"");
             
                 printf("Please input 1 to return:");
-                int a;//checking "1" key
-                scanf("%d",&a);
+                int key;//checking "1" key
+                scanf("%d",&key);
                 getchar();
-                if (a == 1)
+                if (key == 1)
                 {
                     sleep(1);
                     cls();
@@ -464,7 +464,7 @@ void manage_package_and_repository(){
                 else
                 {
                     printf("Please input 1 to return:");
-                    scanf("%d",&a);
+                    scanf("%d",&key);
                     getchar();
                 }
             }
@@ -504,10 +504,10 @@ void manage_package_and_repository(){
                 }
                 strcpy(UserInput,"");
                 printf("Please input 1 to return:");
-                int a;//checking "1" key
-                scanf("%d",&a);
+                int key;//checking "1" key
+                scanf("%d",&key);
                 getchar();
-                if (a == 1)
+                if (key == 1)
                 {
                     sleep(1);
                     cls();
@@ -518,7 +518,7 @@ void manage_package_and_repository(){
                 else
                 {
                     printf("Please input 1 to return:");
-                    scanf("%d",&a);
+                    scanf("%d",&key);
                     getchar();
                 }
             }
@@ -543,10 +543,10 @@ void manage_package_and_repository(){
                 package_search(UserInput);
                 strcpy(UserInput,"");
                 printf("Please input 1 to return:");
-                int a;//checking "1" key
-                scanf("%d",&a);
+                int key;//checking "1" key
+                scanf("%d",&key);
                 getchar();
-                if (a == 1)
+                if (key == 1)
                 {
                     sleep(1);
                     cls();
@@ -557,7 +557,7 @@ void manage_package_and_repository(){
                 else
                 {
                     printf("Please press 1 to return:");
-                    scanf("%d",&a);
+                    scanf("%d",&key);
                     getchar();
                 }
             }
@@ -647,12 +647,12 @@ void about(){
     ******************************************************\n\
     ");
     printf("Please input 1 to return:");
-    int a;//checking "1" key
-    scanf("%d",&a);
+    int key;//checking "1" key
+    scanf("%d",&key);
     getchar();
-    while(a)
+    while(key)
     {
-        if (a == 1)
+        if (key == 1)
         {
             cls();
             break;
@@ -660,7 +660,7 @@ void about(){
         else
         {
             printf("Please press 1 to return:");
-            scanf("%d",&a);
+            scanf("%d",&key);
             getchar();
         }
     }
