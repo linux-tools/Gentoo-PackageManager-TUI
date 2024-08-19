@@ -183,6 +183,7 @@ void repository_manage(){
 }
 
 void advance_of_portage(){
+    create_floder_in_portage();
     sleep(1);
     cls();
     portage_manage_menu();
@@ -374,7 +375,7 @@ void advance_of_portage(){
         {
             cls();
             recover_backup();
-            system("tree -lhp $_PORTAGE_USE $_PORTAGE_ACCEPT $_PORTAGE_MASK");
+            system("tree -lhp /etc/portage/package.use /etc/portage/package.accept_keywords /etc/portage/package.mask");
             printf("If you can check the package.use,package.accept_keywords,package.mask content directory, it means that the recovery has been successful, otherwise please confirm whether it is in backup has written content or reported to Bug.\n");
             printf("Return after 3 seconds\n");
             sleep(3);
@@ -639,7 +640,7 @@ void about(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **Version:v3.0-beta-dev3                            **\n\
+    **Version:v3.0-beta-dev4                            **\n\
     **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
     **Author:Super111                                   **\n\
     **Homepage:https://gitee.com/Linux-Tool             **\n\

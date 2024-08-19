@@ -19,7 +19,7 @@ clean_all:
 	make -C en_US clean && make -C zh_CN clean && rm -rf package genpkg-sw gentoo-packagemanager-tui.tar.gz
 clean_excess_files:
 	make -C en_US clean_excess_files && make -C zh_CN clean_excess_files
-clean_package:
+clean_rmpkg:
 	rm -rf package
 	rm -rf $(PACKAGE_NAME).tar.gz
 
@@ -45,7 +45,7 @@ install_zh:
 	@echo "三秒钟后结束安装"
 	@sleep 3
 	@. /etc/profile
-install_all:
+install:
 	@make -C en_US install && make -C zh_CN install
 	@install -d /usr/bin/
 	@install -m 0755 genpkg-sw /usr/bin/
@@ -55,6 +55,7 @@ install_all:
 	@echo "you can use genpkg-sw to change your language!"
 	@sleep 3
 	@echo "三秒钟后结束安装"
+	@echo "End installation in three seconds"
 	@sleep 3
 	@. /etc/profile
 

@@ -183,6 +183,7 @@ void repository_manage(){
 }
 
 void advance_of_portage(){
+    create_floder_in_portage();
     sleep(1);
     cls();
     portage_manage_menu();
@@ -374,7 +375,7 @@ void advance_of_portage(){
         {
             cls();
             recover_backup();
-            system("tree -lhp $_PORTAGE_USE $_PORTAGE_ACCEPT $_PORTAGE_MASK");
+            system("tree -lhp /etc/portage/package.use /etc/portage/package.accept_keywords /etc/portage/package.mask");
             printf("如果您可以检查package.use、package.eccept_keywords、package.mask内容目录，则表示恢复已成功，否则请确认备份中是否有写入内容或报告Bug。\n");
             printf("3秒后返回\n");
             sleep(3);
@@ -639,7 +640,7 @@ void about(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **版本:v3.0-beta-dev3                                **\n\
+    **版本:v3.0-beta-dev4                                **\n\
     **软件依赖:gentoolkit,eselect-repository,sudo,tree   **\n\
     **作者:Super111                                      **\n\
     **作者主页:https://gitee.com/Linux-Tool              **\n\
