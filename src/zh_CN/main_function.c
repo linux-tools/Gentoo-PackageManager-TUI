@@ -94,7 +94,7 @@ void repository_manage(){
         {
             cls();
             system("eselect repository list");
-            printf("请输入要禁用的名称:");
+            printf("请输入要启用的名称:");
             scanf("%s",ChooseRepo);
             getchar();
             repo_enable(ChooseRepo);
