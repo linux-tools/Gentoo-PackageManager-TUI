@@ -49,7 +49,7 @@ install:
 	@make -C en_US install && make -C zh_CN install
 	@install -d /usr/bin/
 	@install -m 0755 genpkg-sw /usr/bin/
-	@ln -sf $(zh_CN) $(PROGRAM)
+	@ln -sf $(en_US) $(PROGRAM)
 	@clear
 	@echo "您可以使用genpkg-sw命令去更改软件语言!"
 	@echo "you can use genpkg-sw to change your language!"
