@@ -640,7 +640,7 @@ void about(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **版本:v3.0-beta-dev4                                **\n\
+    **版本:v3.0-beta-dev5                                **\n\
     **软件依赖:gentoolkit,eselect-repository,sudo,tree   **\n\
     **作者:Super111                                      **\n\
     **作者主页:https://gitee.com/Linux-Tool              **\n\
