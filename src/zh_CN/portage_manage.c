@@ -109,4 +109,4 @@ char delete_ACCEPT(char a[255]){
     sleep(1);
     system("clear");
     return 0;
-}//From line 20 to line 112, including some operations of the portal system
+}//从20行到112行，包括当前系统的一些操作

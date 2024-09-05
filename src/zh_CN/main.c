@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<string.h>
 #include<unistd.h>
-#include "portage_package_function.h"//Only portage-related software operation commands, such as emerge commands, are managed
-#include "main_function.h"//The main function functions are stored, and some functions are encapsulated in package.h, and there are multiple encapsulation
+#include "portage_package_function.h"//仅管理与gentoo相关的软件操作命令，如emerge命令
+#include "main_function.h"//主要函数被存储，一些函数被封装在portage_packagefunction.h中，并且有多个封装
 #include "main_menu.h"
 int main(){
     int _choose_;

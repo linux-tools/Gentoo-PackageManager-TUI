@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<string.h>
-char package_install_src(char a[255]){//Gentoo's packages installation founction
+char package_install_src(char a[255]){//Gentoo的软件包安装功能，从源码编译
     char exec_src[255];
     sprintf(exec_src,"sudo emerge --ask %s",a);
     system("clear");
@@ -14,7 +14,7 @@ char package_install_src(char a[255]){//Gentoo's packages installation founction
     return 0;
 }
 
-char package_install_binary(char a[255]){//Gentoo's packages installation founction
+char package_install_binary(char a[255]){//Gentoo的软件包安装功能，直接使用二进制包
     char exec_binary[255];
     sprintf(exec_binary,"sudo emerge --ask -g %s",a);
     system("clear");
@@ -57,7 +57,7 @@ char package_install_binary(char a[255]){//Gentoo's packages installation founct
     return 0;
 }
 
-char package_search(char a[255]){//Gentoo's packages searching founction
+char package_search(char a[255]){//Gentoo的软件包搜索功能
     char exec[255];
     sprintf(exec,"emerge -S %s",a);
     system("clear");
@@ -66,7 +66,7 @@ char package_search(char a[255]){//Gentoo's packages searching founction
     return 0;
 }
 
-char package_uninstall(char a[255]){//Gentoo's package uninstallation founction
+char package_uninstall(char a[255]){///Gentoo的软件包卸载功能
     char exec[255];
     sprintf(exec,"sudo emerge -acv %s",a);
     system("clear");
@@ -113,14 +113,14 @@ void system_update_binary(){
         }
     }
     system("sudo emerge -avuDNg @world");
-}//Gentoo's system packages update function
+}//Gentoo的系统包更新功能
 
 char package_check(char a[255]){
     char exec[255];
     sprintf(exec,"equery list %s",a);
     system(exec);
     return 0;
-}/*Managing installed packages and parameter "a" represent package group*/
+}/*管理已安装的包，参数“a”表示包组*/
 
 void repository_edit_binary(){
     char exec[255];

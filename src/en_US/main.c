@@ -3,7 +3,7 @@
 #include<string.h>
 #include<unistd.h>
 #include "portage_package_function.h"//Only portage-related software operation commands, such as emerge commands, are managed
-#include "main_function.h"//The main function functions are stored, and some functions are encapsulated in package.h, and there are multiple encapsulation
+#include "main_function.h"//The main function functions are stored, and some functions are encapsulated in portage_package_function.h, and there are multiple encapsulation
 #include "main_menu.h"
 int main(){
     int _choose_;
