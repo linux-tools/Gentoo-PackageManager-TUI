@@ -11,13 +11,16 @@ In terms of source portability,the software theoretically support all architectu
 #### Installation
 
 Install dependencies:
-app-eselect/eselect-repository,app-portage/gentoolkit app-admin/sudo,app-text/tree
+app-eselect/eselect-repository,app-portage/gentoolkit,app-admin/sudo,app-text/tree,app-editors/neovim
 
-Please execute "emerge --ask app-eselect/eselect-repository app-portage/gentoolkit" to install dependencies.
+Please execute "emerge --ask app-eselect/eselect-repository app-portage/gentoolkit app-admin/sudo,app-text/tree,app-editors/neovim" to install dependencies.
 
 install:
-Please execute "make && make install" to build and install gentoo-packagemanager.
-You can remove /usr/bin/gentoo-packagemanager to uninstall.
+Download the package on the Release and unzip it and run the install.sh to install it, and use the uninstall.sh to uninstall 😃 it
+
+Install from source code: This operation is risky, and the compiled program may be problematic, please be cautious 😕
+
+Compilation Options: Execute make all to compile everything; Run make zh to compile only the Chinese version; Run make en to compile only the English version (not recommended 😕) Installation options: Run make install_en install the English version; Run the make install_zh install the Chinese version; If you run the make install command to install the dual-language version, the default selection of Chinese (make en &install_zh, make en &&& make install_en will make the language switching option unavailable!! 😟 ）
 
 #### Instructions
 
