@@ -11,10 +11,13 @@
 
 安装依赖：app-portage/gentoolkit,app-eselect/select-repository,app-admin/sudo,app-text/tree
 执行make、make install 即可，如需卸载，请删除"/usr/bin/gentoo-packagemanager"即可
-也可以下载Release上的包解压并执行install.sh来安装，用uninstall.sh来卸载
+也可以下载Release上的包解压并执行install.sh来安装，用uninstall.sh来卸载 :tw-1f603: 
 
-从源代码安装：此操作有风险，编译出来的程序恐有问题，请谨慎
-执行make all
+从源代码安装：此操作有风险，编译出来的程序恐有问题，请谨慎 :tw-1f615: 
+编译选项：
+执行make all编译所有内容；执行make zh只编译中文版；执行make en只编译英文版(不建议这么做 :tw-1f615: )
+安装选项：
+执行make install_en安装英文版；执行make install_zh安装中文版；执行make install则安装双语言版，默认选择中文（make zh && make install_zh、make en && make install_en会使切换语言选项变得不可用！！！ :tw-1f61f: ）
 
 #### 使用说明
 
