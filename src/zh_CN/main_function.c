@@ -30,13 +30,8 @@ void repository_manage(){
     {
         if (choose_3 == 1)
         {
-            system("eselect editor list");
-            printf("请选择:");
-            int b;
-            scanf("%d",&b);
-            sleep(1);
-            editor_choose(b);
-            editor_check();
+            cls();
+            repository_edit_src();
             printf("返回中...\n");
             sleep(1);
             cls();
@@ -47,17 +42,6 @@ void repository_manage(){
         else if (choose_3 == 2)
         {
             cls();
-            repository_edit_src();
-            printf("返回中...\n");
-            sleep(1);
-            cls();
-            package_repository_edit_menu();
-            scanf("%d",&choose_3);
-            getchar();
-        }
-        else if (choose_3 == 3)
-        {
-            cls();
             repository_edit_binary();
             printf("返回中...\n");
             sleep(1);
@@ -66,7 +50,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 4)
+        else if (choose_3 == 3)
         {
             cls();
             sleep(1);
@@ -90,7 +74,7 @@ void repository_manage(){
                 getchar();
             }
         }
-        else if (choose_3 == 5)
+        else if (choose_3 == 4)
         {
             cls();
             system("eselect repository list");
@@ -106,7 +90,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 6)
+        else if (choose_3 == 5)
         {
             cls();
             system("eselect repository list");
@@ -122,7 +106,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 7)
+        else if (choose_3 == 6)
         {
             cls();
             system("eselect repository list");
@@ -138,7 +122,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
             }
-        else if (choose_3 == 8)
+        else if (choose_3 == 7)
         {
             cls();
             system("eselect repository list");
@@ -156,7 +140,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 9)
+        else if (choose_3 == 8)
         {
             cls();
             system("sudo emerge --sync");
@@ -167,7 +151,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }                    
-        else if (choose_3 == 10)
+        else if (choose_3 == 9)
         {
             sleep(1);
             break;
