@@ -13,6 +13,9 @@
 执行make、make install 即可，如需卸载，请删除"/usr/bin/gentoo-packagemanager"即可
 也可以下载Release上的包解压并执行install.sh来安装，用uninstall.sh来卸载
 
+从源代码安装：此操作有风险，编译出来的程序恐有问题，请谨慎
+执行make all
+
 #### 使用说明
 
 请以输入数字的方式进行操作，切勿随意输入字符串。
