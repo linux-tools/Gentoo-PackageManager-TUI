@@ -19,7 +19,7 @@ void recover_backup(){
 
 char edit_USE(char a[255]){
     char exec[255];
-    sprintf(exec,"sudo $EDITOR /etc/portage/package.use/%s",a);
+    sprintf(exec,"sudo nvim /etc/portage/package.use/%s",a);
     sleep(1);
     system(exec);
     sleep(1);
@@ -29,7 +29,7 @@ char edit_USE(char a[255]){
 
 char edit_MASK(char a[255]){
     char exec[255];
-    sprintf(exec,"sudo $EDITOR /etc/portage/package.mask/%s",a);
+    sprintf(exec,"sudo nvim /etc/portage/package.mask/%s",a);
     sleep(1);
     system(exec);
     sleep(1);
@@ -39,7 +39,7 @@ char edit_MASK(char a[255]){
 
 char edit_ACCEPT(char a[255]){
     char exec[255];
-    sprintf(exec,"sudo $EDITOR /etc/portage/package.accept_keywords/%s",a);
+    sprintf(exec,"sudo nvim /etc/portage/package.accept_keywords/%s",a);
     sleep(1);
     system("clear");
     system(exec);
