@@ -9,9 +9,8 @@
 
 #### 安装教程
 
-安装依赖：app-portage/gentoolkit,app-eselect/select-repository,app-admin/sudo,app-text/tree
-执行make、make install 即可，如需卸载，请删除"/usr/bin/gentoo-packagemanager"即可
-也可以下载Release上的包解压并执行install.sh来安装，用uninstall.sh来卸载 :tw-1f603: 
+安装依赖：app-portage/gentoolkit,app-eselect/select-repository,app-admin/sudo,app-text/tree,app-editors/neovim
+下载Release上的包解压并执行install.sh来安装，用uninstall.sh来卸载 :tw-1f603: 
 
 从源代码安装：此操作有风险，编译出来的程序恐有问题，请谨慎 :tw-1f615: 
 
