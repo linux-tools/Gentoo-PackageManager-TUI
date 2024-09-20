@@ -2,7 +2,7 @@
 
 #### Description
 
-Gentoo-PackageManager,a package TUI manager of portage by C programing,is included many useful functions,ranging from checking installed packages,updating system to editing repository.
+Gentoo-PackageManager,a package TUI(Text User Interface) manager of portage by C programing,is included many useful functions,ranging from checking installed packages,updating system to editing repository.
 
 #### Software Architecture
 
