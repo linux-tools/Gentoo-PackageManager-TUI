@@ -6,7 +6,7 @@ Gentoo-PackageManager,a package TUI(Text User Interface) manager of portage by C
 
 #### Software Architecture
 
-In terms of source portability,the software theoretically support all architectures.
+In terms of source portability,the software theoretically support all architectures.Only support Gentoo GNU/Linux
 
 #### Installation
 
