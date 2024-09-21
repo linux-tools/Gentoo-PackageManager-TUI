@@ -1,4 +1,4 @@
-#ifndef MAIN_FUNCTION_H
+#ifndef MAIN_FUNCTION_H//专门显示菜单界面的
 
 void menu_main();
 

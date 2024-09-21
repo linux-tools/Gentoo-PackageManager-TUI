@@ -21,7 +21,7 @@ void cls(){
 }
 
 void repository_manage(){
-    sleep(1);
+    sleep(1);//此为main_function.h中该函数的内容
     cls();
     package_repository_edit_menu();
     scanf("%d",&choose_3);
@@ -166,7 +166,7 @@ void repository_manage(){
     }
 }
 
-void advance_of_portage(){
+void advance_of_portage(){//从169到387行的自定义函数来源于portage_manage.h
     create_floder_in_portage();
     sleep(1);
     cls();
@@ -386,7 +386,7 @@ void advance_of_portage(){
     }
 }
 
-void manage_package_and_repository(){
+void manage_package_and_repository(){//此为main_function.h中该函数的内容
     sleep(1);
     cls();
     menu_folk();
