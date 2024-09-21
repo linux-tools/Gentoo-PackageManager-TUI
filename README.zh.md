@@ -14,7 +14,9 @@
 也可以下载Release上的包解压并执行install.sh来安装，用uninstall.sh来卸载
 
 其余编译选项：
+
 make package:打包软件，格式为tar.gz
+
 make install:安装中英两文版，支持genpkg-sw切换
 
 #### 使用说明
