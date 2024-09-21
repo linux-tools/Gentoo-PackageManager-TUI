@@ -16,7 +16,7 @@ en:
 	make -C en_US
 
 clean_all:
-	make -C en_US clean && make -C zh_CN clean && rm -rf package genpkg-sw gentoo-packagemanager-tui.tar.gz
+	make -C en_US clean && make -C zh_CN clean && rm -rf package genpkg-sw $(PACKAGE_NAME).tar.gz
 clean_excess_files:
 	make -C en_US clean_excess_files && make -C zh_CN clean_excess_files
 clean_rmpkg:
