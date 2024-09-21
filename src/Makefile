@@ -24,24 +24,16 @@ clean_rmpkg:
 	rm -rf $(PACKAGE_NAME).tar.gz
 
 install_en:
-	@make -C en_US install && make -C zh_CN install
-	@install -d /usr/bin/
-	@install -m 0755 genpkg-sw /usr/bin/
+	@make -C en_US install
 	@ln -sf $(en_US) $(PROGRAM)
 	@clear
-	@echo "you can use genpkg-sw to change your language!"
-	@sleep 3
 	@echo "End installation in three seconds"
 	@sleep 3
 	@. /etc/profile
 install_zh:
-	@make -C en_US install && make -C zh_CN install
+	@make -C en_US install
 	@install -d /usr/bin/
-	@install -m 0755 genpkg-sw /usr/bin/
-	@ln -sf $(zh_CN) $(PROGRAM)
 	@clear
-	@echo "您可以使用genpkg-sw命令去更改软件语言!"
-	@sleep 3
 	@echo "三秒钟后结束安装"
 	@sleep 3
 	@. /etc/profile
@@ -53,7 +45,7 @@ install:
 	@clear
 	@echo "您可以使用genpkg-sw命令去更改软件语言!"
 	@echo "you can use genpkg-sw to change your language!"
-	@sleep 3
+	@sleep 1
 	@echo "三秒钟后结束安装"
 	@echo "End installation in three seconds"
 	@sleep 3
