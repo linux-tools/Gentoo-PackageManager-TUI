@@ -18,17 +18,17 @@ make all:编译所有文件
 
 make zh:编译与中文版有关的文件
 
-make en:编译与英文版有关的文件
+make en:编译与英文版有关的文件(请注意，make zh && make install_zh或make en && make install_en会使genpkg-sw不可用)
 
 安装与卸载选项：
 
 make package:打包软件，格式为tar.gz
 
-make install:安装中英两文版，支持genpkg-sw切换
+make install:安装中英两文版，支持切换语言
 
-make install_zh:仅安装中文版，不支持genpkg-sw
+make install_zh:仅安装中文版，不支持切换语言
 
-make install_en:仅安装英文版，不支持genpkg-sw
+make install_en:仅安装英文版，不支持切换语言
 
 make uninstall:顾名思义，卸载软件
 
