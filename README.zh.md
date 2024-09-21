@@ -17,7 +17,7 @@
 
 make package:打包软件，格式为tar.gz
 
-make install:安装中英两文版，支持genpkg-sw切换
+make install:安装中英两文版，支持genpkg-sw切换;make install_zh:仅安装中文版，不支持genpkg-sw;make install_en:仅安装英文版，不支持genpkg-sw
 
 #### 使用说明
 
