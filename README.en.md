@@ -20,7 +20,32 @@ Download the package on the Release and unzip it and run the install.sh to insta
 
 Install from source code: This operation is risky, and the compiled program may be problematic, please be cautious 😕
 
-Compilation Options: Execute make all to compile everything; Run make zh to compile only the Chinese version; Run make en to compile only the English version (not recommended 😕) Installation options: Run make install_en install the English version; Run the make install_zh install the Chinese version; If you run the make install command to install the dual-language version, the default selection of Chinese (make en &install_zh, make en &&& make install_en will make the language switching option unavailable!! 😟 ）
+Compilation Options: 
+Run "make all" to compile everything
+
+Run "make zh" to compile only the Chinese version
+
+Run "make en" to compile only the English version (not recommended 😕)
+
+Run "make package" to package the software as a "tar.gz" file
+
+ Installation && Uninstallation Options: 
+ 
+ Run ”make install_en“ install the English version
+ 
+ Run the "make install_zh" install the Chinese version ("make zh && install_zh", "make en && make install_en" will make the language switching option unavailable!! 😟 )
+ 
+ Run the make install command to install the dual-language version, the default selection of Chinese
+
+make uninstall:You know the command that used to uninstall the software
+
+Cleaning Options:
+
+make clean_all:Clean all the files
+
+make clean_excess_files:Clean the files produced by the C compiler,such as ".o" file
+
+make clean_rmpkg:delete the packaged file(tar.gz file)
 
 #### Instructions
 

@@ -10,14 +10,35 @@
 #### 安装教程
 
 安装依赖：app-portage/gentoolkit,app-eselect/select-repository,app-admin/sudo,app-text/tree,app-editors/neovim
-执行make、make install 即可，如需卸载，请删除"/usr/bin/gentoo-packagemanager"即可
+执行make all、make install 即可，如需卸载，请执行make uninstall（请确保同步下来的文件夹还在，并在Gentoo-PackageManager-TUI目录下执行）
 也可以下载Release上的包解压并执行install.sh来安装，用uninstall.sh来卸载
 
-其余编译选项：
+编译选项：
+make all:编译所有文件
+
+make zh:编译与中文版有关的文件
+
+make en:编译与英文版有关的文件
+
+安装与卸载选项：
 
 make package:打包软件，格式为tar.gz
 
-make install:安装中英两文版，支持genpkg-sw切换;make install_zh:仅安装中文版，不支持genpkg-sw;make install_en:仅安装英文版，不支持genpkg-sw
+make install:安装中英两文版，支持genpkg-sw切换
+
+make install_zh:仅安装中文版，不支持genpkg-sw
+
+make install_en:仅安装英文版，不支持genpkg-sw
+
+make uninstall:顾名思义，卸载软件
+
+清理选项：
+
+make clean_all:清理所有文件
+
+make clean_excess_files:清理.o的文件
+
+make clean_rmpkg:删除已打包的tar.gz软件包
 
 #### 使用说明
 

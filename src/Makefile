@@ -6,7 +6,7 @@ PROGRAM=/usr/bin/genpkg
 PACKAGE_FILES=en_US/genpkg-en zh_CN/genpkg-zh genpkg-sw
 PACKAGE_NAME=gentoo-packagemanager-tui
 
-genpkg-sw:genpkg-sw.c
+genpkg-sw:genpkg-sw.c#依赖项
 	$(CC) genpkg-sw.c -Wall -g -o genpkg-sw
 all:genpkg-sw
 	make -C en_US && make -C zh_CN
