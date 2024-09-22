@@ -29,8 +29,5 @@ void repository_edit_binary();
 
 void repository_edit_src();
 
-int editor_choose(int a);
-
-char editor_check();
 
 #endif

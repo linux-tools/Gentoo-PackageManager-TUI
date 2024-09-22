@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<string.h>
 #include<unistd.h>
-#include "portage_package_function.h"//Only portage-related software operation commands, such as emerge commands, are managed
-#include "main_function.h"//The main function functions are stored, and some functions are encapsulated in package.h, and there are multiple encapsulation
+#include "portage_package_function.h"//仅管理与gentoo相关的软件操作命令，如emerge命令
+#include "main_function.h"//主要函数被存储，一些函数被封装在portage_packagefunction.h中，并且有多个封装
 #include "main_menu.h"
 int main(){
     int _choose_;
@@ -14,28 +14,28 @@ int main(){
     {
         if (_choose_ == 1)//转到“包管理”子菜单
         {
-            manage_package_and_repository();
-            menu_main();
+            manage_package_and_repository();//来自main_function.h
+            menu_main();//来自main_menu.h
             scanf("%d",&_choose_);
             getchar();   
         }
         else if (_choose_ == 2)//转到系统更新选项
         {
-            update_system();
+            update_system();//来自main_function.h
             menu_main();
             scanf("%d",&_choose_);
             getchar();
         }
         else if (_choose_ == 3)//检查软件版本
         {
-            about();
+            about();//来自main_function.h
             menu_main();
             scanf("%d",&_choose_);
             getchar();
         }
         else if (_choose_ == 4)
         {
-            cls();
+            cls();//来自main_function.h
             system("genpkg-sw");
             printf("需要重新启动才能生效...\n");
             sleep(2);

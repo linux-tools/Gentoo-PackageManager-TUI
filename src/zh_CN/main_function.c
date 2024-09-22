@@ -21,7 +21,7 @@ void cls(){
 }
 
 void repository_manage(){
-    sleep(1);
+    sleep(1);//此为main_function.h中该函数的内容
     cls();
     package_repository_edit_menu();
     scanf("%d",&choose_3);
@@ -29,22 +29,6 @@ void repository_manage(){
     while (choose_3)
     {
         if (choose_3 == 1)
-        {
-            system("eselect editor list");
-            printf("请选择:");
-            int b;
-            scanf("%d",&b);
-            sleep(1);
-            editor_choose(b);
-            editor_check();
-            printf("返回中...\n");
-            sleep(1);
-            cls();
-            package_repository_edit_menu();
-            scanf("%d",&choose_3);
-            getchar();
-        }
-        else if (choose_3 == 2)
         {
             cls();
             repository_edit_src();
@@ -55,7 +39,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 3)
+        else if (choose_3 == 2)
         {
             cls();
             repository_edit_binary();
@@ -66,7 +50,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 4)
+        else if (choose_3 == 3)
         {
             cls();
             sleep(1);
@@ -90,11 +74,11 @@ void repository_manage(){
                 getchar();
             }
         }
-        else if (choose_3 == 5)
+        else if (choose_3 == 4)
         {
             cls();
             system("eselect repository list");
-            printf("请输入要禁用的名称:");
+            printf("请输入要启用的名称:");
             scanf("%s",ChooseRepo);
             getchar();
             repo_enable(ChooseRepo);
@@ -106,7 +90,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 6)
+        else if (choose_3 == 5)
         {
             cls();
             system("eselect repository list");
@@ -122,7 +106,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 7)
+        else if (choose_3 == 6)
         {
             cls();
             system("eselect repository list");
@@ -138,7 +122,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
             }
-        else if (choose_3 == 8)
+        else if (choose_3 == 7)
         {
             cls();
             system("eselect repository list");
@@ -156,7 +140,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 9)
+        else if (choose_3 == 8)
         {
             cls();
             system("sudo emerge --sync");
@@ -167,7 +151,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }                    
-        else if (choose_3 == 10)
+        else if (choose_3 == 9)
         {
             sleep(1);
             break;
@@ -182,7 +166,8 @@ void repository_manage(){
     }
 }
 
-void advance_of_portage(){
+void advance_of_portage(){//从169到387行的自定义函数来源于portage_manage.h
+    create_floder_in_portage();
     sleep(1);
     cls();
     portage_manage_menu();
@@ -374,7 +359,7 @@ void advance_of_portage(){
         {
             cls();
             recover_backup();
-            system("tree -lhp $_PORTAGE_USE $_PORTAGE_ACCEPT $_PORTAGE_MASK");
+            system("tree -lhp /etc/portage/package.use /etc/portage/package.accept_keywords /etc/portage/package.mask");
             printf("如果您可以检查package.use、package.eccept_keywords、package.mask内容目录，则表示恢复已成功，否则请确认备份中是否有写入内容或报告Bug。\n");
             printf("3秒后返回\n");
             sleep(3);
@@ -401,7 +386,7 @@ void advance_of_portage(){
     }
 }
 
-void manage_package_and_repository(){
+void manage_package_and_repository(){//此为main_function.h中该函数的内容
     sleep(1);
     cls();
     menu_folk();
@@ -639,7 +624,7 @@ void about(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **版本:v3.0-Release-RC1                              **\n\
+    **版本:v3.0-RC1                                      **\n\
     **软件依赖:gentoolkit,eselect-repository,sudo,tree   **\n\
     **作者:Super111                                      **\n\
     **作者主页:https://gitee.com/Linux-Tool              **\n\

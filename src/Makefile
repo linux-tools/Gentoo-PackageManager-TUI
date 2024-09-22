@@ -6,7 +6,7 @@ PROGRAM=/usr/bin/genpkg
 PACKAGE_FILES=en_US/genpkg-en zh_CN/genpkg-zh genpkg-sw
 PACKAGE_NAME=gentoo-packagemanager-tui
 
-genpkg-sw:genpkg-sw.c
+genpkg-sw:genpkg-sw.c#依赖项
 	$(CC) genpkg-sw.c -Wall -g -o genpkg-sw
 all:genpkg-sw
 	make -C en_US && make -C zh_CN
@@ -16,45 +16,38 @@ en:
 	make -C en_US
 
 clean_all:
-	make -C en_US clean && make -C zh_CN clean && rm -rf package genpkg-sw gentoo-packagemanager-tui.tar.gz
+	make -C en_US clean && make -C zh_CN clean && rm -rf package genpkg-sw $(PACKAGE_NAME).tar.gz
 clean_excess_files:
 	make -C en_US clean_excess_files && make -C zh_CN clean_excess_files
-clean_package:
+clean_rmpkg:
 	rm -rf package
 	rm -rf $(PACKAGE_NAME).tar.gz
 
 install_en:
+	@make -C en_US install
+	@ln -sf $(en_US) $(PROGRAM)
+	@clear
+	@echo "End installation in three seconds"
+	@sleep 3
+	@. /etc/profile
+install_zh:
+	@make -C en_US install
+	@install -d /usr/bin/
+	@clear
+	@echo "三秒钟后结束安装"
+	@sleep 3
+	@. /etc/profile
+install:
 	@make -C en_US install && make -C zh_CN install
 	@install -d /usr/bin/
 	@install -m 0755 genpkg-sw /usr/bin/
 	@ln -sf $(en_US) $(PROGRAM)
 	@clear
+	@echo "您可以使用genpkg-sw命令去更改软件语言!"
 	@echo "you can use genpkg-sw to change your language!"
-	@sleep 3
+	@sleep 1
+	@echo "三秒钟后结束安装"
 	@echo "End installation in three seconds"
-	@sleep 3
-	@. /etc/profile
-install_zh:
-	@make -C en_US install && make -C zh_CN install
-	@install -d /usr/bin/
-	@install -m 0755 genpkg-sw /usr/bin/
-	@ln -sf $(zh_CN) $(PROGRAM)
-	@clear
-	@echo "您可以使用genpkg-sw命令去更改软件语言!"
-	@sleep 3
-	@echo "三秒钟后结束安装"
-	@sleep 3
-	@. /etc/profile
-install_all:
-	@make -C en_US install && make -C zh_CN install
-	@install -d /usr/bin/
-	@install -m 0755 genpkg-sw /usr/bin/
-	@ln -sf $(zh_CN) $(PROGRAM)
-	@clear
-	@echo "您可以使用genpkg-sw命令去更改软件语言!"
-	@echo "you can use genpkg-sw to change your language!"
-	@sleep 3
-	@echo "三秒钟后结束安装"
 	@sleep 3
 	@. /etc/profile
 

@@ -30,13 +30,8 @@ void repository_manage(){
     {
         if (choose_3 == 1)
         {
-            system("eselect editor list");
-            printf("Please choose:");
-            int b;
-            scanf("%d",&b);
-            sleep(1);
-            editor_choose(b);
-            editor_check();
+            cls();
+            repository_edit_src();
             printf("Returning...\n");
             sleep(1);
             cls();
@@ -47,17 +42,6 @@ void repository_manage(){
         else if (choose_3 == 2)
         {
             cls();
-            repository_edit_src();
-            printf("Returning...\n");
-            sleep(1);
-            cls();
-            package_repository_edit_menu();
-            scanf("%d",&choose_3);
-            getchar();
-        }
-        else if (choose_3 == 3)
-        {
-            cls();
             repository_edit_binary();
             printf("Returning...\n");
             sleep(1);
@@ -66,7 +50,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 4)
+        else if (choose_3 == 3)
         {
             cls();
             sleep(1);
@@ -90,7 +74,7 @@ void repository_manage(){
                 getchar();
             }
         }
-        else if (choose_3 == 5)
+        else if (choose_3 == 4)
         {
             cls();
             system("eselect repository list");
@@ -106,7 +90,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 6)
+        else if (choose_3 == 5)
         {
             cls();
             system("eselect repository list");
@@ -122,7 +106,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 7)
+        else if (choose_3 == 6)
         {
             cls();
             system("eselect repository list");
@@ -138,7 +122,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
             }
-        else if (choose_3 == 8)
+        else if (choose_3 == 7)
         {
             cls();
             system("eselect repository list");
@@ -156,7 +140,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }
-        else if (choose_3 == 9)
+        else if (choose_3 == 8)
         {
             cls();
             system("sudo emerge --sync");
@@ -167,7 +151,7 @@ void repository_manage(){
             scanf("%d",&choose_3);
             getchar();
         }                    
-        else if (choose_3 == 10)
+        else if (choose_3 == 9)
         {
             sleep(1);
             break;
@@ -183,6 +167,7 @@ void repository_manage(){
 }
 
 void advance_of_portage(){
+    create_floder_in_portage();
     sleep(1);
     cls();
     portage_manage_menu();
@@ -374,7 +359,7 @@ void advance_of_portage(){
         {
             cls();
             recover_backup();
-            system("tree -lhp $_PORTAGE_USE $_PORTAGE_ACCEPT $_PORTAGE_MASK");
+            system("tree -lhp /etc/portage/package.use /etc/portage/package.accept_keywords /etc/portage/package.mask");
             printf("If you can check the package.use,package.accept_keywords,package.mask content directory, it means that the recovery has been successful, otherwise please confirm whether it is in backup has written content or reported to Bug.\n");
             printf("Return after 3 seconds\n");
             sleep(3);
@@ -639,7 +624,7 @@ void about(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **Version:v3.0-Release-RC1                          **\n\
+    **Version:v3.0-RC1                                  **\n\
     **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
     **Author:Super111                                   **\n\
     **Homepage:https://gitee.com/Linux-Tool             **\n\
