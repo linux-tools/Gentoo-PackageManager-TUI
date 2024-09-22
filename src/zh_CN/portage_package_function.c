@@ -126,13 +126,13 @@ void repository_edit_binary(){
     char exec[255];
     sprintf(exec,"sudo $EDITOR /etc/portage/binrepos.conf/gentoobinhost.conf");
     system(exec);
-}//
+}//二进制仓库编辑
 
 void repository_edit_src(){
     char exec[255];
     sprintf(exec,"sudo $EDITOR /etc/portage/repos.conf/gentoo.conf");
     system(exec);
-}
+}//源代码仓库编辑
 
 char repo_add(char a[255]){
     char exec[255];
@@ -141,7 +141,7 @@ char repo_add(char a[255]){
     system(exec);
     strcpy(exec,"");
     return 0;
-}
+}//第三方仓库添加
 
 char repo_enable(char a[255]){
     char exec[255];
@@ -150,7 +150,7 @@ char repo_enable(char a[255]){
     system(exec);
     strcpy(exec,"");
     return 0;
-}
+}//第三方仓库开启
 
 char repo_disable(char a[255]){
     char exec[255];
@@ -159,7 +159,7 @@ char repo_disable(char a[255]){
     system(exec);
     strcpy(exec,"");
     return 0;
-}
+}//第三方仓库关闭
 
 char repo_remove(char a[255]){
     char exec[255];
@@ -168,4 +168,4 @@ char repo_remove(char a[255]){
     system(exec);
     strcpy(exec,"");
     return 0;
-}
+}//第三方仓库移除

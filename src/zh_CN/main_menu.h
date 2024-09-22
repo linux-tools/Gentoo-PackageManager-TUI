@@ -12,7 +12,7 @@ void package_uninstall_menu();
 
 void package_install_menu();
 
-void package_repository_edit_menu();//Packagemanager Menu
+void package_repository_edit_menu();
 
 void portage_manage_menu();
 
