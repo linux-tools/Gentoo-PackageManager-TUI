@@ -183,7 +183,7 @@ void about_menu(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **Version:v3.0-RC1                                  **\n\
+    **Version:v3.0-RC2                                  **\n\
     **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
     **Author:Super111                                   **\n\
     **Homepage:https://gitee.com/Linux-Tool             **\n\
