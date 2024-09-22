@@ -120,13 +120,13 @@ char package_check(char a[255]){
     sprintf(exec,"equery list %s",a);
     system(exec);
     return 0;
-}/*管理已安装的包，参数“a”表示包组*/
+}//管理已安装的包
 
 void repository_edit_binary(){
     char exec[255];
     sprintf(exec,"sudo $EDITOR /etc/portage/binrepos.conf/gentoobinhost.conf");
     system(exec);
-}
+}//
 
 void repository_edit_src(){
     char exec[255];
