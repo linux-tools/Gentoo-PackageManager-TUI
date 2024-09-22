@@ -157,4 +157,17 @@ void choose_delete_file_type_menu_in_portage(){
     Please choose:");
 }
 
+void about_menu(){
+    printf("\n\
+    ******************************************************\n\
+    ******************************************************\n\
+    **Version:v3.0-RC1                                  **\n\
+    **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
+    **Author:Super111                                   **\n\
+    **Homepage:https://gitee.com/Linux-Tool             **\n\
+    ******************************************************\n\
+    ******************************************************\n\
+    ");
+}
+
 //Packagemanager Menu

@@ -621,16 +621,7 @@ void update_system(){
 
 void about(){
     cls();
-    printf("\n\
-    ******************************************************\n\
-    ******************************************************\n\
-    **Version:v3.0-RC1                                  **\n\
-    **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
-    **Author:Super111                                   **\n\
-    **Homepage:https://gitee.com/Linux-Tool             **\n\
-    ******************************************************\n\
-    ******************************************************\n\
-    ");
+    about_menu();
     printf("Please input 1 to return:");
     int key;//checking "1" key
     scanf("%d",&key);
