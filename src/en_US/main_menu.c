@@ -136,6 +136,7 @@ void choose_create_file_type_menu_in_portage(){
     1.USE\n\
     2.ACCEPT_KEYWORDS\n\
     3.MASK\n\
+    After selection, please enter the 'package group name/software name' to create the file, for example: 'app-text/foo'\n\
     Please choose:");
 }
 
@@ -145,6 +146,25 @@ void choose_edit_file_type_menu_in_portage(){
     1.USE\n\
     2.ACCEPT_KEYWORDS\n\
     3.MASK\n\
+    There are some examples to display so that you can edit these files correctly:\n\
+    \n\
+    ---------------------------------------\n\
+    in USE file:\n\
+    app-text/foo X11 -qt5\n\
+    ---------------------------------------\n\
+    in ACCEPT_KEYWORDS file:\n\
+    app-text/foo amd64\n\
+    app-text/foo ~amd64\n\
+    app-text/foo-9999 **(Not recommend)\n\
+    =app-text/foo-1.2 amd64(Specify version)\n\
+    >=app-text/foo-1.2\n\
+    <=app-text/foo-1.2\n\
+    ---------------------------------------\n\
+    in MASK file:\n\
+    >sys-kernel/gentoo-sources-6.6.21(Specify version range and lock to prevent installation)\n\
+    =app-text/foo:1.2(Specify version and lock to prevent installation)\n\
+    ---------------------------------------\n\
+    \n\
     Please choose:");
 }
 
@@ -154,6 +174,8 @@ void choose_delete_file_type_menu_in_portage(){
     1.USE\n\
     2.ACCEPT_KEYWORDS\n\
     3.MASK\n\
+    After selection, please enter the 'package group name/software name' to delete the file, for example: 'app-text/foo'\n\
+    Please note that deleting files still carries risks!!!\n\
     Please choose:");
 }
 
@@ -161,7 +183,7 @@ void about_menu(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **Version:v3.0-RC1                                  **\n\
+    **Version:v3.0-RC2                                  **\n\
     **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
     **Author:Super111                                   **\n\
     **Homepage:https://gitee.com/Linux-Tool             **\n\
