@@ -135,6 +135,7 @@ void choose_create_file_type_menu_in_portage(){
     1.USE\n\
     2.ACCEPT_KEYWORDS\n\
     3.MASK\n\
+    选择后，请输入“包组名/软件名”来创建文件，例如:'app-text/foo'\n\
     请选择:");
 }
 
@@ -144,6 +145,25 @@ void choose_edit_file_type_menu_in_portage(){
     1.USE\n\
     2.ACCEPT_KEYWORDS\n\
     3.MASK\n\
+    有一些示例可以展示，以便您可以正确编辑这些文件:\n\
+    \n\
+    ----------------------------------------\n\
+    在USE文件中:\n\
+    app-text/foo X11 -qt5\n\
+    ----------------------------------------\n\
+    在ACCEPT_KEYWORDS文件中:\n\
+    app-text/foo amd64\n\
+    app-text/foo ~amd64\n\
+    app-text/foo-9999 **(不推荐)\n\
+    =app-text/foo-1.2 amd64(指定版本)\n\
+    >=app-text/foo-1.2\n\
+    <=app-text/foo-1.2\n\
+    ----------------------------------------\n\
+    在MASK文件中:\n\
+    >sys-kernel/gentoo-sources-6.6.21(指定版本范围并锁定不准安装)\n\
+    =app-text/foo:1.2(指定版本范围并锁定不准安装)\n\
+    ----------------------------------------\n\
+    \n\
     请选择:");
 }
 
@@ -153,6 +173,8 @@ void choose_delete_file_type_menu_in_portage(){
     1.USE\n\
     2.ACCEPT_KEYWORDS\n\
     3.MASK\n\
+    选择后，请输入“包组名/软件名”来删除文件，例如:'app-text/foo'\n\
+    请注意，删除文件仍存在风险\n\
     请选择:");
 }
 
@@ -168,4 +190,3 @@ void about_menu(){
     ******************************************************\n\
     ");
 }
-//Packagemanager Menu
