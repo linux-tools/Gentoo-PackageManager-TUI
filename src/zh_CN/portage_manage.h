@@ -14,7 +14,7 @@ char edit_ACCEPT(char a[255]);// 编辑“/etc/portage/package.accept_keywords�
 
 char create_USE(char a[255]);// 创建“/etc/portage/package.use”目录下的相关文件，作用同上
 
-char create_MASK(char a[255]);// 编辑“/etc/portage/package.mask”目录下的相关文件，作用同上
+char create_MASK(char a[255]);// 创建“/etc/portage/package.mask”目录下的相关文件，作用同上
 
 char create_ACCEPT(char a[255]);// 创建“/etc/portage/package.accept_keywords”目录下的相关文件，作用同上
 
