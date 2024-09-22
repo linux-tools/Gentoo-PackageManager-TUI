@@ -169,16 +169,3 @@ char repo_remove(char a[255]){
     strcpy(exec,"");
     return 0;
 }
-
-int editor_choose(int a){
-    char exec[255];
-    sprintf(exec,"sudo eselect editor set %d && . /etc/profile",a);
-    system(exec);
-    return 0;
-}
-
-char editor_check()
-{
-    system("echo The editor that you choose is $EDITOR");
-    return 0;
-}
