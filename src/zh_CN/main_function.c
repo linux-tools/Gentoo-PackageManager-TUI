@@ -20,8 +20,7 @@ void cls(){
     system("clear");
 }
 
-void repository_manage(){
-    sleep(1);//此为main_function.h中该函数的内容
+void repository_manage(){//此为main_function.h中该函数的内容
     cls();
     package_repository_edit_menu();
     scanf("%d",&choose_3);
@@ -153,7 +152,7 @@ void repository_manage(){
         }                    
         else if (choose_3 == 9)
         {
-            sleep(1);
+            cls();
             break;
         }
         else                    
@@ -192,7 +191,6 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
         }
         else if (choose_5 == 2)
         {
-            sleep(1);
             cls();
             choose_create_file_type_menu_in_portage();
             scanf("%d",&ChooseInPortage);
@@ -247,7 +245,6 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
         }
         else if (choose_5 == 3)
         {
-            sleep(1);
             cls();
             choose_edit_file_type_menu_in_portage();
             scanf("%d",&ChooseInPortage);
@@ -302,7 +299,6 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
         }
         else if (choose_5 == 4)
         {
-            sleep(1);
             cls();
             choose_delete_file_type_menu_in_portage();
             scanf("%d",&ChooseInPortage);
@@ -371,7 +367,6 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
         }
         else if (choose_5 == 6)
         {
-            sleep(1);
             cls();
             break;
         }
@@ -387,7 +382,6 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
 }
 
 void manage_package_and_repository(){//此为main_function.h中该函数的内容
-    sleep(1);
     cls();
     menu_folk();
     scanf("%d",&choose_1);
@@ -396,7 +390,6 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
     {
         if (choose_1 == 1)
         {
-            sleep(1);
             cls();
             check_installed_packages_menu();
             scanf("%s",UserInput);
@@ -409,7 +402,6 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
             getchar();
             if (key == 1)
             {
-                sleep(1);
                 cls();
                 menu_folk();
                 scanf("%d",&choose_1);
@@ -521,7 +513,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
             sleep(1);
             cls();
             printf("搜索包或输入b返回上一菜单\n\
-                    请输入：");
+            请输入：");
             scanf("%s",UserInput);
             if (strcmp(UserInput,"b") != 0)
             {
@@ -548,7 +540,6 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
             }
             else
             {
-                sleep(1);
                 cls();
                 menu_folk();
                 scanf("%d",&choose_1);
@@ -558,7 +549,6 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
         else if (choose_1 == 5)
         {
             repository_manage();
-            sleep(1);
             cls();
             menu_folk();
             scanf("%d",&choose_1);
@@ -574,7 +564,6 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
         
         else if (choose_1 == 7)
         {
-            sleep(1);
             cls();
             break;
         }        

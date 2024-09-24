@@ -77,7 +77,19 @@ char package_uninstall(char a[255]){///Gentoo的软件包卸载功能
 }
 
 void system_update_src(){
+    printf("开始从源代码更新系统\n");
+    sleep(1);
+    printf("第一阶段:同步源仓库...\n");
+    sleep(1);
+    system("sudo emerge-webrsync && sudo emerge --sync");
+    sleep(1);
+    system("clear");
+    printf("第二阶段:编译并安装更新...\n");
+    sleep(1);
     system("sudo emerge -avuDN @world");
+    sleep(1);
+    system("clear");
+    printf("完成！\n");
 }
 void system_update_binary(){
     int a;
@@ -112,7 +124,15 @@ void system_update_binary(){
             scanf("%d",&a);
         }
     }
+    printf("第一阶段:同步源仓库...\n");
+    sleep(1);
+    system("sudo emerge-webrsync && sudo emerge --sync");
+    sleep(1);
+    printf("第二阶段:安装二进制软件包更新\n");
+    sleep(1);
     system("sudo emerge -avuDNg @world");
+    sleep(1);
+    printf("完成！\n");
 }//Gentoo的系统包更新功能
 
 char package_check(char a[255]){

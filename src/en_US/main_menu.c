@@ -89,25 +89,25 @@ void package_install_menu(){
 
 void package_repository_edit_menu(){
     printf("\n\
----------------------------------REPOSITORY-MANAGE-MENU------------------------------------\n\
--------------------------------------------------------------------------------------------\n\
-Warning: The first and second operations will very dangerous,I suggest execute 3-7 options \n\
-to edit some repository unless you just change mirror to speed up fetching packages and upd\n\
-ating system according to your location.Never remove gentoo sources.YOU ARE BE WARNED!     \n\
--------------------------------------------------------------------------------------------\n\
--------------------------------------------------------------------------------------------\n\
-******1.edit src repository(directly edit /etc/portage/repos.conf/gentoo.conf)             \n\
-******2.edit binary repository(directly edit /etc/portage/binrepos.conf/gentoobinhost.conf)\n\
-******3.check usable reposiory                                                             \n\
-******4.add and enable third-party repository                                              \n\
-******5.disable repository(Both official and third-party repositories are included)        \n\
-******6.remove repository(Both official and third-party repositories are included)         \n\
-******7.add your own repository(Not on the list of eselect-repository online)              \n\
-******8.sync all repository                                                                \n\
-******9.Back                                                                              \n\
--------------------------------------------------------------------------------------------\n\
--------------------------------------------------------------------------------------------\n\
-####Please input:");
+    ---------------------------------REPOSITORY-MANAGE-MENU------------------------------------\n\
+    -------------------------------------------------------------------------------------------\n\
+    Warning: The first and second operations will very dangerous,I suggest execute 3-7 options \n\
+    to edit some repository unless you just change mirror to speed up fetching packages and upd\n\
+    ating system according to your location. Never remove gentoo sources.YOU ARE BE WARNED!    \n\
+    -------------------------------------------------------------------------------------------\n\
+    -------------------------------------------------------------------------------------------\n\
+    ******1.edit src repository(directly edit /etc/portage/repos.conf/gentoo.conf)             \n\
+    ******2.edit binary repository(directly edit /etc/portage/binrepos.conf/gentoobinhost.conf)\n\
+    ******3.check usable reposiory                                                             \n\
+    ******4.add and enable third-party repository                                              \n\
+    ******5.disable repository(Both official and third-party repositories are included)        \n\
+    ******6.remove repository(Both official and third-party repositories are included)         \n\
+    ******7.add your own repository(Not on the list of eselect-repository online)              \n\
+    ******8.sync all repository                                                                \n\
+    ******9.Back                                                                               \n\
+    -------------------------------------------------------------------------------------------\n\
+    -------------------------------------------------------------------------------------------\n\
+    Please input:");
 }
 
 void portage_manage_menu(){
@@ -183,7 +183,7 @@ void about_menu(){
     printf("\n\
     ******************************************************\n\
     ******************************************************\n\
-    **Version:v3.0-RC2                                  **\n\
+    **Version:v3.0-RC3                                  **\n\
     **Dependence:gentoolkit,eselect-repository,sudo,tree**\n\
     **Author:Super111                                   **\n\
     **Homepage:https://gitee.com/Linux-Tool             **\n\
