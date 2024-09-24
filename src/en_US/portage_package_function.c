@@ -77,7 +77,17 @@ char package_uninstall(char a[255]){//Gentoo's package uninstallation founction
 }
 
 void system_update_src(){
+    printf("Start to update system from src\n");
+    sleep(1);
+    printf("Stage 1:sync repository...\n");
+    sleep(1);
+    system("sudo emerge-webrsync && sudo emerge --sync");
+    sleep(1);
+    printf("Stage 2:compiling and installing updates...\n");
+    sleep(1);
     system("sudo emerge -avuDN @world");
+    sleep(1);
+    printf("Finish!\n");
 }
 void system_update_binary(){
     int a;
@@ -112,7 +122,15 @@ void system_update_binary(){
             scanf("%d",&a);
         }
     }
+    printf("Stage 1:sync repository...\n");
+    sleep(1);
+    system("sudo emerge-webrsync && sudo emerge --sync");
+    sleep(1);
+    printf("Stage 2:installing binary packages updates...\n");
+    sleep(1);
     system("sudo emerge -avuDNg @world");
+    sleep(1);
+    printf("Finish!\n");
 }//Gentoo's system packages update function
 
 char package_check(char a[255]){

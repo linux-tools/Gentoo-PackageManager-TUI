@@ -21,7 +21,6 @@ void cls(){
 }
 
 void repository_manage(){
-    sleep(1);
     cls();
     package_repository_edit_menu();
     scanf("%d",&choose_3);
@@ -153,7 +152,7 @@ void repository_manage(){
         }                    
         else if (choose_3 == 9)
         {
-            sleep(1);
+            cls();
             break;
         }
         else                    
@@ -182,8 +181,8 @@ void advance_of_portage(){
             backup();
             system("tree -lhp $HOME/.portage-tags/backup");
             printf("If you can check the backup content directory, it means that the backup has been successful, otherwise please confirm whether it is in /etc/portage/package.use,/etc/portage/package.accept_keywords,/etc/portage/package.mask has written content or reported to Bug.\n");
-            printf("Return after 10 seconds\n");
-            sleep(10);
+            printf("Return after 3 seconds\n");
+            sleep(3);
             cls();
             portage_manage_menu();
             printf("Please input a number:");
@@ -192,7 +191,6 @@ void advance_of_portage(){
         }
         else if (choose_5 == 2)
         {
-            sleep(1);
             cls();
             choose_create_file_type_menu_in_portage();
             scanf("%d",&ChooseInPortage);
@@ -247,7 +245,6 @@ void advance_of_portage(){
         }
         else if (choose_5 == 3)
         {
-            sleep(1);
             cls();
             choose_edit_file_type_menu_in_portage();
             scanf("%d",&ChooseInPortage);
@@ -302,7 +299,6 @@ void advance_of_portage(){
         }
         else if (choose_5 == 4)
         {
-            sleep(1);
             cls();
             choose_delete_file_type_menu_in_portage();
             scanf("%d",&ChooseInPortage);
@@ -371,7 +367,6 @@ void advance_of_portage(){
         }
         else if (choose_5 == 6)
         {
-            sleep(1);
             cls();
             break;
         }
@@ -387,7 +382,6 @@ void advance_of_portage(){
 }
 
 void manage_package_and_repository(){
-    sleep(1);
     cls();
     menu_folk();
     scanf("%d",&choose_1);
@@ -396,7 +390,6 @@ void manage_package_and_repository(){
     {
         if (choose_1 == 1)
         {
-            sleep(1);
             cls();
             check_installed_packages_menu();
             scanf("%s",UserInput);
@@ -409,7 +402,6 @@ void manage_package_and_repository(){
             getchar();
             if (key == 1)
             {
-                sleep(1);
                 cls();
                 menu_folk();
                 scanf("%d",&choose_1);
@@ -548,7 +540,6 @@ void manage_package_and_repository(){
             }
             else
             {
-                sleep(1);
                 cls();
                 menu_folk();
                 scanf("%d",&choose_1);
@@ -558,8 +549,6 @@ void manage_package_and_repository(){
         else if (choose_1 == 5)
         {
             repository_manage();
-            sleep(1);
-            cls();
             menu_folk();
             scanf("%d",&choose_1);
             getchar();                    
@@ -574,7 +563,6 @@ void manage_package_and_repository(){
         
         else if (choose_1 == 7)
         {
-            sleep(1);
             cls();
             break;
         }        
