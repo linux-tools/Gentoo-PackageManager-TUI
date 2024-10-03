@@ -24,4 +24,6 @@ char delete_MASK(char a[255]);//Delete the relevant files in the "/etc/portal/pa
 
 char delete_ACCEPT(char a[255]);//Delete the relevant files in the "/etc/portal/package.accept_keywords" directory, with the same function as above
 
+char edit_make_conf();//Edit "/etc/portage/make.conf"
+
 #endif

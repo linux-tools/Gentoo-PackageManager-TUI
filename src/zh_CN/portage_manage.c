@@ -109,4 +109,11 @@ char delete_ACCEPT(char a[255]){
     sleep(1);
     system("clear");
     return 0;
+}
+
+void edit_make_conf(){
+    sleep(1);
+    system("sudo nvim /etc/portage/make.conf");
+    sleep(1);
+    system("clear");
 }//从20行到112行，包括当前系统的一些操作

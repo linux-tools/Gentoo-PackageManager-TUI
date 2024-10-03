@@ -109,4 +109,11 @@ char delete_ACCEPT(char a[255]){
     sleep(1);
     system("clear");
     return 0;
+}
+
+void edit_make_conf(){
+    sleep(1);
+    system("sudo nvim /etc/portage/make.conf");
+    sleep(1);
+    system("clear");
 }//From line 20 to line 112, including some operations of the portal system

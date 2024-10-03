@@ -61,6 +61,7 @@ package:
 	$(CC) genpkg-sw.c -o genpkg-sw
 	@mkdir -p package/usr/bin
 	@cp -r $(PACKAGE_FILES) package/usr/bin/
+	@cp -r install-dependencies.sh package/
 	@echo "sudo install -d /usr/bin/ && sudo install -m 0755 usr/bin/genpkg-en /usr/bin/ && sudo install -m 0755 usr/bin/genpkg-zh /usr/bin/ && sudo install -m 0755 usr/bin/genpkg-sw /usr/bin/ && sudo ln -sf /usr/bin/genpkg-en /usr/bin/genpkg" >> package/install.sh
 	@echo "sudo rm -rf $(zh_CN) $(en_US) $(SW) $(PROGRAM)" >> package/uninstall.sh
 	@chmod 0755 package/install.sh

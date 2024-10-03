@@ -1,16 +1,28 @@
 #include<stdio.h>
 #include<string.h>
-#include "portage_package_function.h"
+#include "portage_package_repo_function.h"
 #include "main_menu.h"
 #include "portage_manage.h"
 
 char UserInput[255];
-int choose_1;
-int choose_2;
-int choose_3;
-int choose_4;
-int choose_5;
-int ChooseInPortage;  //定义用户的输入变量
+
+int choose_1 = 0;
+int *p_ch1 = &choose_1;
+
+int choose_2 = 0;
+int *p_ch2 = &choose_2;
+
+int choose_3 = 0;
+int *p_ch3 = &choose_3;
+
+int choose_4 = 0;
+int *p_ch4 = &choose_4;
+
+int choose_5 = 0;
+int *p_ch5 = &choose_5;
+
+int ChooseInPortage = 0;  
+int *p_chportage = &ChooseInPortage;//定义用户的输入变量
 char ChooseRepo[255];
 char CreateInPortage[255];
 char EditInPortage[255];
@@ -23,7 +35,7 @@ void cls(){
 void repository_manage(){//此为main_function.h中该函数的内容
     cls();
     package_repository_edit_menu();
-    scanf("%d",&choose_3);
+    scanf("%d",p_ch3);
     getchar();
     while (choose_3)
     {
@@ -35,7 +47,7 @@ void repository_manage(){//此为main_function.h中该函数的内容
             sleep(1);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&choose_3);
+            scanf("%d",p_ch3);
             getchar();
         }
         else if (choose_3 == 2)
@@ -46,7 +58,7 @@ void repository_manage(){//此为main_function.h中该函数的内容
             sleep(1);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&choose_3);
+            scanf("%d",p_ch3);
             getchar();
         }
         else if (choose_3 == 3)
@@ -63,7 +75,7 @@ void repository_manage(){//此为main_function.h中该函数的内容
                 sleep(1);
                 cls();
                 package_repository_edit_menu();
-                scanf("%d",&choose_3);
+                scanf("%d",p_ch3);
                 getchar();
             }
             else
@@ -86,7 +98,7 @@ void repository_manage(){//此为main_function.h中该函数的内容
             sleep(2);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&choose_3);
+            scanf("%d",p_ch3);
             getchar();
         }
         else if (choose_3 == 5)
@@ -102,7 +114,7 @@ void repository_manage(){//此为main_function.h中该函数的内容
             sleep(3);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&choose_3);
+            scanf("%d",p_ch3);
             getchar();
         }
         else if (choose_3 == 6)
@@ -118,7 +130,7 @@ void repository_manage(){//此为main_function.h中该函数的内容
             sleep(3);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&choose_3);
+            scanf("%d",p_ch3);
             getchar();
             }
         else if (choose_3 == 7)
@@ -136,7 +148,7 @@ void repository_manage(){//此为main_function.h中该函数的内容
             sleep(1);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&choose_3);
+            scanf("%d",p_ch3);
             getchar();
         }
         else if (choose_3 == 8)
@@ -147,7 +159,7 @@ void repository_manage(){//此为main_function.h中该函数的内容
             sleep(1);
             cls();
             package_repository_edit_menu();
-            scanf("%d",&choose_3);
+            scanf("%d",p_ch3);
             getchar();
         }                    
         else if (choose_3 == 9)
@@ -159,7 +171,7 @@ void repository_manage(){//此为main_function.h中该函数的内容
         {
             cls();
             package_repository_edit_menu();
-            scanf("%d",&choose_3);
+            scanf("%d",p_ch3);
             getchar();
         }
     }
@@ -171,7 +183,7 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
     cls();
     portage_manage_menu();
     printf("请输入一个数字:");
-    scanf("%d",&choose_5);
+    scanf("%d",p_ch5);
     getchar();
     while (choose_5)
     {
@@ -186,14 +198,14 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
             cls();
             portage_manage_menu();
             printf("请输入一个数字:");
-            scanf("%d",&choose_5);
+            scanf("%d",p_ch5);
             getchar();
         }
         else if (choose_5 == 2)
         {
             cls();
             choose_create_file_type_menu_in_portage();
-            scanf("%d",&ChooseInPortage);
+            scanf("%d",p_chportage);
             getchar();
             while (ChooseInPortage)
             {
@@ -234,20 +246,20 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
                 {
                     cls();
                     choose_create_file_type_menu_in_portage();
-                    scanf("%d",&ChooseInPortage);
+                    scanf("%d",p_chportage);
                     getchar();
                 }
             }
             portage_manage_menu();
             printf("请输入一个数字:");
-            scanf("%d",&choose_5);
+            scanf("%d",p_ch5);
             getchar();            
         }
         else if (choose_5 == 3)
         {
             cls();
             choose_edit_file_type_menu_in_portage();
-            scanf("%d",&ChooseInPortage);
+            scanf("%d",p_chportage);
             getchar();
             while (ChooseInPortage)
             {
@@ -288,20 +300,20 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
                 {
                     cls();
                     choose_create_file_type_menu_in_portage();
-                    scanf("%d",&ChooseInPortage);
+                    scanf("%d",p_chportage);
                     getchar();
                 }
             }
             portage_manage_menu();
             printf("请输入一个数字:");
-            scanf("%d",&choose_5);
+            scanf("%d",p_ch5);
             getchar();
         }
         else if (choose_5 == 4)
         {
             cls();
             choose_delete_file_type_menu_in_portage();
-            scanf("%d",&ChooseInPortage);
+            scanf("%d",p_chportage);
             getchar();
             while (ChooseInPortage)
             {
@@ -342,13 +354,13 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
                 {
                     cls();
                     choose_create_file_type_menu_in_portage();
-                    scanf("%d",&ChooseInPortage);
+                    scanf("%d",p_chportage);
                     getchar();
                 }
             }
             portage_manage_menu();
             printf("请输入一个数字:");
-            scanf("%d",&choose_5);
+            scanf("%d",p_ch5);
             getchar();
         }
         else if (choose_5 == 5)
@@ -362,10 +374,18 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
             cls();
             portage_manage_menu();
             printf("请输入一个数字:");
-            scanf("%d",&choose_5);
+            scanf("%d",p_ch5);
             getchar();
         }
         else if (choose_5 == 6)
+        {
+            edit_make_conf();
+            portage_manage_menu();
+            printf("请输入一个数字:");
+            scanf("%d",p_ch5);
+            getchar();
+        }
+        else if (choose_5 == 7)
         {
             cls();
             break;
@@ -375,7 +395,7 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
             cls();
             portage_manage_menu();
             printf("请输入一个数字:");
-            scanf("%d",&choose_5);
+            scanf("%d",p_ch5);
             getchar();
         }  
     }
@@ -384,7 +404,7 @@ void advance_of_portage(){//从169到387行的自定义函数来源于portage_ma
 void manage_package_and_repository(){//此为main_function.h中该函数的内容
     cls();
     menu_folk();
-    scanf("%d",&choose_1);
+    scanf("%d",p_ch1);
     getchar();
     while (choose_1)
     {
@@ -404,7 +424,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
             {
                 cls();
                 menu_folk();
-                scanf("%d",&choose_1);
+                scanf("%d",p_ch1);
                 getchar();
             }
             else
@@ -435,7 +455,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
                     sleep(1);
                     cls();
                     menu_folk();
-                    scanf("%d",&choose_1);
+                    scanf("%d",p_ch1);
                     getchar();
                 }
                 else
@@ -450,7 +470,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
                 sleep(1);
                 cls();
                 menu_folk();
-                scanf("%d",&choose_1);
+                scanf("%d",p_ch1);
                 getchar();
             }
         }
@@ -469,7 +489,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
                 2.从二进制安装（并非每个包都可以通过二进制包安装）\n\
                 3.返回\n\
                 请选择：");
-                scanf("%d",&choose_4);
+                scanf("%d",p_ch4);
                 getchar();
                 if (choose_4 == 1)
                 {
@@ -489,7 +509,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
                     sleep(1);
                     cls();
                     menu_folk();
-                    scanf("%d",&choose_1);
+                    scanf("%d",p_ch1);
                     getchar();
                 }
                 else
@@ -504,7 +524,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
                 sleep(1);
                 cls();
                 menu_folk();
-                scanf("%d",&choose_1);
+                scanf("%d",p_ch1);
                 getchar();
             }
         }    
@@ -528,7 +548,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
                     sleep(1);
                     cls();
                     menu_folk();
-                    scanf("%d",&choose_1);
+                    scanf("%d",p_ch1);
                     getchar();
                 }
                 else
@@ -542,7 +562,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
             {
                 cls();
                 menu_folk();
-                scanf("%d",&choose_1);
+                scanf("%d",p_ch1);
                 getchar();
             }
         }
@@ -551,14 +571,14 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
             repository_manage();
             cls();
             menu_folk();
-            scanf("%d",&choose_1);
+            scanf("%d",p_ch1);
             getchar();                    
         }
         else if (choose_1 == 6)
         {
             advance_of_portage();
             menu_folk();
-            scanf("%d",&choose_1);
+            scanf("%d",p_ch1);
             getchar();
         }
         
@@ -571,7 +591,7 @@ void manage_package_and_repository(){//此为main_function.h中该函数的内�
         {
             cls();
             menu_folk();
-            scanf("%d",&choose_1);
+            scanf("%d",p_ch1);
             getchar();
         }  
     }
@@ -581,7 +601,7 @@ void update_system(){
     sleep(1);
     cls();
     update_system_menu();
-    scanf("%d",&choose_2);
+    scanf("%d",p_ch2);
     getchar();
     if (choose_2 == 1)
     {
@@ -603,7 +623,7 @@ void update_system(){
     {
         cls();
         update_system_menu();
-        scanf("%d",&choose_2);
+        scanf("%d",p_ch2);
         getchar();  
     }
 }

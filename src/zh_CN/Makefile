@@ -1,5 +1,5 @@
 CC=gcc
-OBJS=main.o portage_package_function.o main_function.o portage_manage.o main_menu.c
+OBJS=main.o portage_package_repo_function.o main_function.o portage_manage.o main_menu.c
 CFLAGS=-c -Wall -g
 BINDIR=/usr/bin
 genpkg-zh:$(OBJS)
@@ -7,8 +7,8 @@ genpkg-zh:$(OBJS)
 
 main.o:main.c
 	$(CC) main.c $(CFLAGS) -o main.o
-portage_package_function.o:portage_package_function.c
-	$(CC) portage_package_function.c $(CFLAGS) -o portage_package_function.o
+portage_package_repo_function.o:portage_package_repo_function.c
+	$(CC) portage_package_repo_function.c $(CFLAGS) -o portage_package_repo_function.o
 main_function.o:main_function.c
 	$(CC) main_function.c $(CFLAGS) -o main_function.o
 main_menu.o:main_menu.c

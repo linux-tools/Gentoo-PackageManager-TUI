@@ -24,4 +24,5 @@ char delete_MASK(char a[255]);// 删除“/etc/portage/package.mask”目录下�
 
 char delete_ACCEPT(char a[255]);// 删除“/etc/portage/package.accept_keywords”目录下的相关文件，作用同上
 
+void edit_make_conf();//编辑"/etc/portage/make.conf"
 #endif
