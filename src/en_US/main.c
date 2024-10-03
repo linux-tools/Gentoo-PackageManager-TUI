@@ -37,12 +37,7 @@ int main(){
         {
             cls();
             system("genpkg-sw");
-            printf("Need to restart to take effect...\n");
-            sleep(2);
-            cls();
-            menu_main();
-            scanf("%d",&_choose_);
-            getchar();
+            break;
         }
         else if (_choose_ == 5)//Exit software
         {

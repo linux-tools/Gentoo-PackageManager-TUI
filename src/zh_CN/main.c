@@ -37,12 +37,7 @@ int main(){
         {
             cls();//来自main_function.h
             system("genpkg-sw");
-            printf("需要重新启动才能生效...\n");
-            sleep(2);
-            cls();
-            menu_main();
-            scanf("%d",&_choose_);
-            getchar();
+            break;
         }
         
         else if (_choose_ == 5)//退出软件
